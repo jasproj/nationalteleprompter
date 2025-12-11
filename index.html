@@ -9,6 +9,79 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Earth Tone Color Override -->
+    <style>
+        :root {
+            --bg-primary: #12110f;
+            --bg-secondary: #1a1816;
+            --bg-tertiary: #22201c;
+            --bg-card: #262420;
+            --text-primary: #ffffff;
+            --text-secondary: #a89f94;
+            --text-muted: #6b6358;
+            --accent-primary: #e9a23b;
+            --accent-glow: rgba(233, 162, 59, 0.4);
+            --accent-secondary: #c17f3a;
+            --accent-gold: #e9a23b;
+            --accent-green: #7cb87c;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-light: rgba(255, 255, 255, 0.12);
+        }
+        
+        .logo-img {
+            height: 55px;
+            width: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 40px;
+            }
+        }
+        
+        .grid-overlay {
+            background-image: 
+                linear-gradient(rgba(233, 162, 59, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(233, 162, 59, 0.02) 1px, transparent 1px);
+        }
+        
+        .us-outline {
+            stroke: rgba(233, 162, 59, 0.15);
+        }
+        
+        .connection-lines .connection-line {
+            stroke: var(--accent-primary);
+        }
+        
+        .node-pulse {
+            fill: var(--accent-primary);
+        }
+        
+        .node-ring {
+            stroke: var(--accent-primary);
+        }
+        
+        .node-core {
+            fill: var(--accent-primary);
+        }
+        
+        .node.active .node-ring {
+            stroke: var(--accent-green);
+        }
+        
+        .node.active .node-core {
+            fill: var(--accent-green);
+        }
+        
+        .node.active .node-status {
+            fill: var(--accent-green);
+        }
+        
+        .data-packet {
+            fill: var(--accent-primary);
+        }
+    </style>
 </head>
 <body>
     <!-- Scan Line Overlay -->
@@ -18,11 +91,7 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-mark">
-                    <span class="logo-n">N</span>
-                    <span class="logo-t">T</span>
-                </div>
-                <span class="logo-text">NATIONAL<br>TELEPROMPTER</span>
+                <img src="images/logo.svg" alt="National Teleprompter" class="logo-img">
             </a>
             <div class="nav-links">
                 <a href="#network">Network</a>
@@ -57,7 +126,7 @@
         <div class="network-map" id="networkMap">
             <svg viewBox="0 0 960 600" class="us-map-svg">
                 <!-- Simplified US outline path -->
-                <path class="us-outline" d="M 158 125 L 234 122 L 250 114 L 270 115 L 285 132 L 310 125 L 340 130 L 365 115 L 395 125 L 430 120 L 470 125 L 510 118 L 550 122 L 590 115 L 630 120 L 680 118 L 730 125 L 770 130 L 800 145 L 825 160 L 850 185 L 855 220 L 850 260 L 840 300 L 820 340 L 800 380 L 790 410 L 810 440 L 830 470 L 815 485 L 780 478 L 750 470 L 700 475 L 650 485 L 600 490 L 550 488 L 500 495 L 450 490 L 400 485 L 350 488 L 300 492 L 250 485 L 200 475 L 170 455 L 150 420 L 145 380 L 155 340 L 150 300 L 140 260 L 135 220 L 140 180 L 150 150 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                <path class="us-outline" d="M 158 125 L 234 122 L 250 114 L 270 115 L 285 132 L 310 125 L 340 130 L 365 115 L 395 125 L 430 120 L 470 125 L 510 118 L 550 122 L 590 115 L 630 120 L 680 118 L 730 125 L 770 130 L 800 145 L 825 160 L 850 185 L 855 220 L 850 260 L 840 300 L 820 340 L 800 380 L 790 410 L 810 440 L 830 470 L 815 485 L 780 478 L 750 470 L 700 475 L 650 485 L 600 490 L 550 488 L 500 495 L 450 490 L 400 485 L 350 488 L 300 492 L 250 485 L 200 475 L 170 455 L 150 420 L 145 380 L 155 340 L 150 300 L 140 260 L 135 220 L 140 180 L 150 150 Z" fill="none" stroke="rgba(233,162,59,0.1)" stroke-width="2"/>
                 
                 <!-- Network Connection Lines -->
                 <g class="connection-lines">
@@ -704,11 +773,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <div class="logo-mark">
-                            <span class="logo-n">N</span>
-                            <span class="logo-t">T</span>
-                        </div>
-                        <span class="logo-text">NATIONAL<br>TELEPROMPTER</span>
+                        <img src="images/logo.svg" alt="National Teleprompter" class="logo-img">
                     </a>
                     <p>The National Teleprompter Network.<br>Professional teleprompting services coast to coast.</p>
                 </div>
