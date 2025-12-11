@@ -154,7 +154,8 @@
             justify-content: space-between;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 40px;
+            overflow: visible;
         }
 
         /* Logo - Separated icon and text */
@@ -162,11 +163,13 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            flex-shrink: 0;
+            min-width: 0;
         }
 
         .logo-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             flex-shrink: 0;
         }
 
@@ -180,22 +183,25 @@
             display: flex;
             flex-direction: column;
             line-height: 1;
+            overflow: visible;
         }
 
         .logo-name {
             font-family: var(--font-display);
-            font-size: 18px;
-            letter-spacing: 0.18em;
+            font-size: 16px;
+            letter-spacing: 0.12em;
             color: var(--text-bright);
             white-space: nowrap;
+            overflow: visible;
         }
 
         .logo-tagline {
-            font-size: 9px;
-            letter-spacing: 0.12em;
+            font-size: 7.5px;
+            letter-spacing: 0.31em;
             color: var(--text-muted);
             text-transform: uppercase;
-            margin-top: 3px;
+            margin-top: 4px;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -302,8 +308,10 @@
             .nav-links { display: none; }
             .mobile-toggle { display: flex; }
             .mobile-menu { display: flex; }
-            .nav-inner { padding: 0 24px; }
-            .logo-name { font-size: 15px; }
+            .nav-inner { padding: 0 20px; }
+            .logo-name { font-size: 14px; letter-spacing: 0.10em; }
+            .logo-tagline { font-size: 6.5px; letter-spacing: 0.28em; }
+            .logo-icon { width: 38px; height: 38px; }
         }
 
         /* =============================================
@@ -1642,7 +1650,7 @@
                 </div>
                 
                 <div class="contact-form-card reveal reveal-delay-1">
-                    <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                    <form class="contact-form" action="https://formspree.io/f/mdkqplqp" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Full Name</label>
