@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Teleprompter | Professional Teleprompting Network Across America</title>
+    <meta name="description" content="National teleprompter services with local expertise. Professional operators across Florida, Ohio, Georgia, Pennsylvania, and New York. One network, every stage, nationwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Scan Line Overlay -->
+    <div class="scanlines"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-mark">
+                    <span class="logo-n">N</span>
+                    <span class="logo-t">T</span>
+                </div>
+                <span class="logo-text">NATIONAL<br>TELEPROMPTER</span>
+            </a>
+            <div class="nav-links">
+                <a href="#network">Network</a>
+                <a href="#services">Services</a>
+                <a href="#coverage">Coverage</a>
+                <a href="#contact" class="nav-cta">Get a Quote</a>
+            </div>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#network">Network</a>
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#contact">Get a Quote</a>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="grid-overlay"></div>
+            <div class="network-lines"></div>
+        </div>
+        
+        <!-- Animated Network Map -->
+        <div class="network-map" id="networkMap">
+            <svg viewBox="0 0 960 600" class="us-map-svg">
+                <!-- Simplified US outline path -->
+                <path class="us-outline" d="M 158 125 L 234 122 L 250 114 L 270 115 L 285 132 L 310 125 L 340 130 L 365 115 L 395 125 L 430 120 L 470 125 L 510 118 L 550 122 L 590 115 L 630 120 L 680 118 L 730 125 L 770 130 L 800 145 L 825 160 L 850 185 L 855 220 L 850 260 L 840 300 L 820 340 L 800 380 L 790 410 L 810 440 L 830 470 L 815 485 L 780 478 L 750 470 L 700 475 L 650 485 L 600 490 L 550 488 L 500 495 L 450 490 L 400 485 L 350 488 L 300 492 L 250 485 L 200 475 L 170 455 L 150 420 L 145 380 L 155 340 L 150 300 L 140 260 L 135 220 L 140 180 L 150 150 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                
+                <!-- Network Connection Lines -->
+                <g class="connection-lines">
+                    <line class="connection-line" x1="780" y1="380" x2="720" y2="280"/>
+                    <line class="connection-line" x1="720" y1="280" x2="580" y2="320"/>
+                    <line class="connection-line" x1="580" y1="320" x2="500" y2="300"/>
+                    <line class="connection-line" x1="780" y1="380" x2="580" y2="320"/>
+                    <line class="connection-line" x1="720" y1="280" x2="500" y2="300"/>
+                </g>
+                
+                <!-- State Nodes -->
+                <g class="network-nodes">
+                    <!-- Florida -->
+                    <g class="node node-florida active" data-state="florida">
+                        <circle class="node-pulse" cx="780" cy="380" r="30"/>
+                        <circle class="node-ring" cx="780" cy="380" r="18"/>
+                        <circle class="node-core" cx="780" cy="380" r="8"/>
+                        <text class="node-label" x="780" y="420">FLORIDA</text>
+                        <text class="node-status" x="780" y="438">ACTIVE</text>
+                    </g>
+                    
+                    <!-- New York -->
+                    <g class="node node-newyork" data-state="newyork">
+                        <circle class="node-pulse" cx="820" cy="200" r="30"/>
+                        <circle class="node-ring" cx="820" cy="200" r="18"/>
+                        <circle class="node-core" cx="820" cy="200" r="8"/>
+                        <text class="node-label" x="820" y="240">NEW YORK</text>
+                        <text class="node-status" x="820" y="258">COMING SOON</text>
+                    </g>
+                    
+                    <!-- Pennsylvania -->
+                    <g class="node node-pennsylvania" data-state="pennsylvania">
+                        <circle class="node-pulse" cx="760" cy="240" r="30"/>
+                        <circle class="node-ring" cx="760" cy="240" r="18"/>
+                        <circle class="node-core" cx="760" cy="240" r="8"/>
+                        <text class="node-label" x="760" y="200">PENNSYLVANIA</text>
+                        <text class="node-status" x="760" y="218">COMING SOON</text>
+                    </g>
+                    
+                    <!-- Ohio -->
+                    <g class="node node-ohio" data-state="ohio">
+                        <circle class="node-pulse" cx="680" cy="260" r="30"/>
+                        <circle class="node-ring" cx="680" cy="260" r="18"/>
+                        <circle class="node-core" cx="680" cy="260" r="8"/>
+                        <text class="node-label" x="680" y="225">OHIO</text>
+                        <text class="node-status" x="680" y="243">COMING SOON</text>
+                    </g>
+                    
+                    <!-- Georgia -->
+                    <g class="node node-georgia" data-state="georgia">
+                        <circle class="node-pulse" cx="720" cy="350" r="30"/>
+                        <circle class="node-ring" cx="720" cy="350" r="18"/>
+                        <circle class="node-core" cx="720" cy="350" r="8"/>
+                        <text class="node-label" x="720" y="310">GEORGIA</text>
+                        <text class="node-status" x="720" y="328">COMING SOON</text>
+                    </g>
+                </g>
+                
+                <!-- Data streams animation -->
+                <g class="data-streams">
+                    <circle class="data-packet" r="3">
+                        <animateMotion dur="3s" repeatCount="indefinite" path="M780,380 L720,280 L580,320"/>
+                    </circle>
+                    <circle class="data-packet" r="3">
+                        <animateMotion dur="4s" repeatCount="indefinite" path="M720,280 L500,300 L580,320"/>
+                    </circle>
+                </g>
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="live-dot"></span>
+                NETWORK ACTIVE
+            </div>
+            <h1 class="hero-title">
+                <span class="line line-1">ONE NETWORK</span>
+                <span class="line line-2">EVERY STAGE</span>
+                <span class="line line-3"><em>NATIONWIDE</em></span>
+            </h1>
+            <p class="hero-subtitle">
+                Professional teleprompter operators, consistent standards, and seamless coordination across multiple states.
+            </p>
+            <div class="hero-actions">
+                <a href="#network" class="btn btn-primary">
+                    <span>Find Your Market</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">Request National Quote</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="1000">1000+</span>
+                    <span class="stat-label">Shows Completed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">States in Network</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Explore Network</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- Network Section -->
+    <section id="network" class="network-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">THE NETWORK</span>
+                <h2 class="section-title">THE NATIONAL TELEPROMPTER NETWORK</h2>
+                <p class="section-subtitle">Local expertise. National reach. One smooth experience.</p>
+            </div>
+            
+            <div class="network-grid">
+                <!-- Florida - Active -->
+                <div class="state-card active" data-state="florida">
+                    <div class="state-status">
+                        <span class="status-dot active"></span>
+                        ACTIVE
+                    </div>
+                    <div class="state-accent"></div>
+                    <h3>Florida Teleprompter</h3>
+                    <p class="state-region">Tampa Bay • Miami • Orlando • Jacksonville</p>
+                    <p class="state-desc">Our flagship operation. 25+ years serving the Southeast with professional teleprompter services for live events, broadcasts, and video production.</p>
+                    <div class="state-services">
+                        <span>Live Events</span>
+                        <span>Video</span>
+                        <span>Corporate</span>
+                    </div>
+                    <a href="https://floridateleprompter.com" class="btn btn-state" target="_blank">
+                        View Florida Site
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Ohio -->
+                <div class="state-card" data-state="ohio">
+                    <div class="state-status">
+                        <span class="status-dot"></span>
+                        COMING SOON
+                    </div>
+                    <div class="state-accent"></div>
+                    <h3>Ohio Teleprompter</h3>
+                    <p class="state-region">Columbus • Cleveland • Cincinnati • Dayton</p>
+                    <p class="state-desc">Expanding into the Midwest. Professional teleprompter services for Ohio's thriving corporate and event markets.</p>
+                    <div class="state-services">
+                        <span>Live Events</span>
+                        <span>Video</span>
+                        <span>Corporate</span>
+                    </div>
+                    <a href="#contact" class="btn btn-state">
+                        Get a Quote in Ohio
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Georgia -->
+                <div class="state-card" data-state="georgia">
+                    <div class="state-status">
+                        <span class="status-dot"></span>
+                        COMING SOON
+                    </div>
+                    <div class="state-accent"></div>
+                    <h3>Georgia Teleprompter</h3>
+                    <p class="state-region">Atlanta • Savannah • Augusta • Athens</p>
+                    <p class="state-desc">Serving Georgia's booming film and production industry with reliable, professional teleprompter operations.</p>
+                    <div class="state-services">
+                        <span>Live Events</span>
+                        <span>Video</span>
+                        <span>Corporate</span>
+                    </div>
+                    <a href="#contact" class="btn btn-state">
+                        Get a Quote in Georgia
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Pennsylvania -->
+                <div class="state-card" data-state="pennsylvania">
+                    <div class="state-status">
+                        <span class="status-dot"></span>
+                        COMING SOON
+                    </div>
+                    <div class="state-accent"></div>
+                    <h3>Pennsylvania Teleprompter</h3>
+                    <p class="state-region">Philadelphia • Pittsburgh • Harrisburg • Allentown</p>
+                    <p class="state-desc">Northeast coverage for Pennsylvania's corporate headquarters and production studios.</p>
+                    <div class="state-services">
+                        <span>Live Events</span>
+                        <span>Video</span>
+                        <span>Corporate</span>
+                    </div>
+                    <a href="#contact" class="btn btn-state">
+                        Get a Quote in Pennsylvania
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- New York -->
+                <div class="state-card" data-state="newyork">
+                    <div class="state-status">
+                        <span class="status-dot"></span>
+                        COMING SOON
+                    </div>
+                    <div class="state-accent"></div>
+                    <h3>New York Teleprompter</h3>
+                    <p class="state-region">New York City • Buffalo • Albany • Syracuse</p>
+                    <p class="state-desc">Premium market coverage for the media capital of the world. Broadcast, corporate, and live event specialists.</p>
+                    <div class="state-services">
+                        <span>Live Events</span>
+                        <span>Video</span>
+                        <span>Broadcast</span>
+                    </div>
+                    <a href="#contact" class="btn btn-state">
+                        Get a Quote in New York
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why National Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content">
+                    <span class="section-tag">WHY NATIONAL</span>
+                    <h2 class="section-title">WHY WORK WITH A NATIONAL NETWORK?</h2>
+                    <div class="why-points">
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="point-text">
+                                <h4>One Vendor, Multiple Cities</h4>
+                                <p>Simplify your production logistics with a single point of contact for multi-city and multi-state work.</p>
+                            </div>
+                        </div>
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="point-text">
+                                <h4>Consistent Standards</h4>
+                                <p>Same gear, same training, same quality expectations at every location in our network.</p>
+                            </div>
+                        </div>
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="point-text">
+                                <h4>Faster Coordination</h4>
+                                <p>Central scheduling means faster response across time zones and seamless handoffs between markets.</p>
+                            </div>
+                        </div>
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                    <polyline points="17 6 23 6 23 12"/>
+                                </svg>
+                            </div>
+                            <div class="point-text">
+                                <h4>Scales With You</h4>
+                                <p>From single events to national tours and corporate roadshows—we grow with your production footprint.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-visual">
+                    <div class="network-diagram">
+                        <div class="diagram-center">
+                            <span>NATIONAL<br>HQ</span>
+                        </div>
+                        <div class="diagram-node node-1"><span>FL</span></div>
+                        <div class="diagram-node node-2"><span>OH</span></div>
+                        <div class="diagram-node node-3"><span>GA</span></div>
+                        <div class="diagram-node node-4"><span>PA</span></div>
+                        <div class="diagram-node node-5"><span>NY</span></div>
+                        <svg class="diagram-lines" viewBox="0 0 300 300">
+                            <line x1="150" y1="150" x2="150" y2="30"/>
+                            <line x1="150" y1="150" x2="265" y2="100"/>
+                            <line x1="150" y1="150" x2="265" y2="200"/>
+                            <line x1="150" y1="150" x2="150" y2="270"/>
+                            <line x1="150" y1="150" x2="35" y2="150"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">SERVICES</span>
+                <h2 class="section-title">SERVICES WE PROVIDE</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="32" cy="32" r="28"/>
+                            <path d="M26 22v20l18-10z"/>
+                        </svg>
+                    </div>
+                    <h3>LIVE EVENTS</h3>
+                    <p>Conferences, keynotes, panels, political events, and corporate gatherings. Our operators stay in sync with the room and keep talent composed under pressure.</p>
+                    <ul class="service-list">
+                        <li>Conferences</li>
+                        <li>Keynotes</li>
+                        <li>Panels</li>
+                        <li>Political + Corporate Events</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="8" y="14" width="48" height="36" rx="2"/>
+                            <path d="M8 24h48M24 14v10"/>
+                        </svg>
+                    </div>
+                    <h3>VIDEO PRODUCTION</h3>
+                    <p>From commercial shoots to corporate videos, agency productions to social content. We shape flow, rehearse delivery, and keep takes sharp.</p>
+                    <ul class="service-list">
+                        <li>Commercial Shoots</li>
+                        <li>Corporate Videos</li>
+                        <li>Agency Productions</li>
+                        <li>Social Content</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="12" y="8" width="40" height="48" rx="2"/>
+                            <line x1="20" y1="20" x2="44" y2="20"/>
+                            <line x1="20" y1="28" x2="44" y2="28"/>
+                            <line x1="20" y1="36" x2="36" y2="36"/>
+                        </svg>
+                    </div>
+                    <h3>EXECUTIVE COMMS</h3>
+                    <p>Earnings calls, investor presentations, internal communications, and board meetings. Confidential, professional, precise.</p>
+                    <ul class="service-list">
+                        <li>Earnings Calls</li>
+                        <li>Investor Presentations</li>
+                        <li>Internal Communications</li>
+                        <li>Board Meetings</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="20" cy="32" r="8"/>
+                            <circle cx="44" cy="32" r="8"/>
+                            <line x1="28" y1="32" x2="36" y2="32"/>
+                            <circle cx="32" cy="16" r="6"/>
+                            <circle cx="32" cy="48" r="6"/>
+                            <line x1="32" y1="22" x2="32" y2="42"/>
+                        </svg>
+                    </div>
+                    <h3>MULTI-CITY CAMPAIGNS</h3>
+                    <p>Matching setups across multiple states with standardized configurations. One vendor, efficient scheduling, consistent delivery everywhere.</p>
+                    <ul class="service-list">
+                        <li>National Tours</li>
+                        <li>Corporate Roadshows</li>
+                        <li>Multi-Market Campaigns</li>
+                        <li>Standardized Configurations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Map Section -->
+    <section id="coverage" class="coverage-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">COVERAGE</span>
+                <h2 class="section-title">WHERE WE OPERATE</h2>
+                <p class="section-subtitle">Explore active markets and see which states are coming online next.</p>
+            </div>
+            
+            <div class="coverage-map-container">
+                <div class="coverage-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot active"></span>
+                        Active Markets
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot coming"></span>
+                        Coming Soon
+                    </div>
+                </div>
+                
+                <div class="coverage-states">
+                    <a href="https://floridateleprompter.com" class="coverage-state active" target="_blank">
+                        <span class="state-abbr">FL</span>
+                        <span class="state-name">Florida</span>
+                        <span class="state-tag">Active</span>
+                    </a>
+                    <a href="#contact" class="coverage-state coming">
+                        <span class="state-abbr">OH</span>
+                        <span class="state-name">Ohio</span>
+                        <span class="state-tag">Coming Soon</span>
+                    </a>
+                    <a href="#contact" class="coverage-state coming">
+                        <span class="state-abbr">GA</span>
+                        <span class="state-name">Georgia</span>
+                        <span class="state-tag">Coming Soon</span>
+                    </a>
+                    <a href="#contact" class="coverage-state coming">
+                        <span class="state-abbr">PA</span>
+                        <span class="state-name">Pennsylvania</span>
+                        <span class="state-tag">Coming Soon</span>
+                    </a>
+                    <a href="#contact" class="coverage-state coming">
+                        <span class="state-abbr">NY</span>
+                        <span class="state-name">New York</span>
+                        <span class="state-tag">Coming Soon</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">TRUSTED</span>
+                <h2 class="section-title">TRUSTED ACROSS EVENTS, BROADCAST, AND PRODUCTION</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <p>We needed a reliable teleprompter team across three cities. This network made everything seamless—same quality, same professionalism at every stop.</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">PRODUCTION MANAGER</span>
+                        <span class="author-company">National Corporate Event</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <p>I could not recommend Jason enough! He has quickly become my favorite and most reliable teleprompter service provider across the nation.</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">CORTEZ CREATIVE</span>
+                        <span class="author-company">30+ Cities Annually</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <p>Professional, reliable, and great with clients. Always a pleasure working with them on productions of any scale.</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">ANDREW LEE</span>
+                        <span class="author-company">Roundhouse Creative</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-logos">
+                <div class="logo-track">
+                    <div class="client-logo">Tampa Bay Buccaneers</div>
+                    <div class="client-logo">NASCAR</div>
+                    <div class="client-logo">NHL All-Star Game</div>
+                    <div class="client-logo">Ford</div>
+                    <div class="client-logo">Publix</div>
+                    <div class="client-logo">The Home Depot</div>
+                    <div class="client-logo">City of Tampa</div>
+                    <div class="client-logo">Mindvalley</div>
+                    <div class="client-logo">Tampa Bay Buccaneers</div>
+                    <div class="client-logo">NASCAR</div>
+                    <div class="client-logo">NHL All-Star Game</div>
+                    <div class="client-logo">Ford</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">BOOK NOW</span>
+                    <h2 class="section-title">BOOK A TELEPROMPTER OPERATOR</h2>
+                    <p class="contact-subtitle">One form. Any city. Any state in the network.</p>
+                    <p>Whether you need coverage in one city or coordinated service across multiple states, we'll connect you with the right team and provide a comprehensive quote.</p>
+                    
+                    <div class="contact-details">
+                        <a href="mailto:info@nationalteleprompter.com" class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <span>info@nationalteleprompter.com</span>
+                        </a>
+                        <a href="tel:727-623-2652" class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <span>727-623-2652</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Mobile</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cities">Event City / Cities</label>
+                                <input type="text" id="cities" name="cities" placeholder="e.g., Miami, Atlanta, New York">
+                            </div>
+                            <div class="form-group">
+                                <label for="dates">Event Dates</label>
+                                <input type="text" id="dates" name="dates" placeholder="e.g., March 15-17, 2025">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="production-type">Type of Production</label>
+                            <select id="production-type" name="production-type">
+                                <option value="">Select production type</option>
+                                <option value="live-event">Live Event / Conference</option>
+                                <option value="video-production">Video Production</option>
+                                <option value="executive-comms">Executive Communications</option>
+                                <option value="multi-city">Multi-City Campaign</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>States Needed</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="states" value="florida">
+                                    <span class="checkmark"></span>
+                                    Florida
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="states" value="ohio">
+                                    <span class="checkmark"></span>
+                                    Ohio
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="states" value="georgia">
+                                    <span class="checkmark"></span>
+                                    Georgia
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="states" value="pennsylvania">
+                                    <span class="checkmark"></span>
+                                    Pennsylvania
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="states" value="newyork">
+                                    <span class="checkmark"></span>
+                                    New York
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your production..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Submit Booking Request</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">
+                            <span class="logo-n">N</span>
+                            <span class="logo-t">T</span>
+                        </div>
+                        <span class="logo-text">NATIONAL<br>TELEPROMPTER</span>
+                    </a>
+                    <p>The National Teleprompter Network.<br>Professional teleprompting services coast to coast.</p>
+                </div>
+                <div class="footer-network">
+                    <h4>THE NETWORK</h4>
+                    <div class="network-links">
+                        <a href="https://floridateleprompter.com" target="_blank">
+                            Florida Teleprompter
+                            <span class="link-status active">Active</span>
+                        </a>
+                        <a href="#">
+                            Ohio Teleprompter
+                            <span class="link-status">Coming Soon</span>
+                        </a>
+                        <a href="#">
+                            Georgia Teleprompter
+                            <span class="link-status">Coming Soon</span>
+                        </a>
+                        <a href="#">
+                            Pennsylvania Teleprompter
+                            <span class="link-status">Coming Soon</span>
+                        </a>
+                        <a href="#">
+                            New York Teleprompter
+                            <span class="link-status">Coming Soon</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>CONTACT</h4>
+                    <a href="mailto:info@nationalteleprompter.com">info@nationalteleprompter.com</a>
+                    <a href="tel:727-623-2652">727-623-2652</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 National Teleprompter. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
