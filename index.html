@@ -3,645 +3,1608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Teleprompter | Professional Teleprompting Network Across America</title>
-    <meta name="description" content="National teleprompter services with local expertise. Professional operators across Florida, Ohio, Georgia, Pennsylvania, and New York. One network, every stage, nationwide.">
+    <title>National Teleprompter | Professional Teleprompting Network</title>
+    <meta name="description" content="National teleprompter services with local expertise. Professional operators across Florida, Ohio, Georgia, Pennsylvania, and New York.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     
-    <!-- Earth Tone Color Override -->
     <style>
+        /* =============================================
+           NATIONAL TELEPROMPTER - PREMIUM SPACE-AGE
+           ============================================= */
+
         :root {
-            --bg-primary: #12110f;
-            --bg-secondary: #1a1816;
-            --bg-tertiary: #22201c;
-            --bg-card: #262420;
-            --text-primary: #ffffff;
-            --text-secondary: #a89f94;
-            --text-muted: #6b6358;
-            --accent-primary: #e9a23b;
-            --accent-glow: rgba(233, 162, 59, 0.4);
-            --accent-secondary: #c17f3a;
-            --accent-gold: #e9a23b;
-            --accent-green: #7cb87c;
-            --border: rgba(255, 255, 255, 0.06);
-            --border-light: rgba(255, 255, 255, 0.12);
+            /* Space-Age Earth Tones */
+            --bg-void: #080706;
+            --bg-deep: #0d0b09;
+            --bg-primary: #141210;
+            --bg-elevated: #1c1915;
+            --bg-card: #211e1a;
+            --bg-hover: #2a2620;
+            
+            /* Warm Metallics */
+            --gold: #c9a227;
+            --gold-light: #e8c547;
+            --gold-glow: rgba(201, 162, 39, 0.6);
+            --copper: #b87333;
+            --copper-glow: rgba(184, 115, 51, 0.5);
+            --bronze: #a67c52;
+            --amber: #ffbf00;
+            
+            /* Text */
+            --text-bright: #faf8f5;
+            --text-primary: #e8e4dc;
+            --text-secondary: #a89d8a;
+            --text-muted: #6b6155;
+            
+            /* Status */
+            --success: #5cb85c;
+            --success-glow: rgba(92, 184, 92, 0.5);
+            
+            /* Borders */
+            --border: rgba(201, 162, 39, 0.08);
+            --border-light: rgba(201, 162, 39, 0.15);
+            --border-bright: rgba(201, 162, 39, 0.3);
+            
+            /* Typography */
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Source Sans 3', sans-serif;
+            
+            /* Animation */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Reset */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         
-        .logo-img {
-            height: 55px;
-            width: auto;
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-void);
+            overflow-x: hidden;
         }
-        
+
+        /* Film Grain Overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
         @media (max-width: 768px) {
-            .logo-img {
-                height: 40px;
-            }
+            .container { padding: 0 24px; }
         }
-        
-        .grid-overlay {
+
+        /* =============================================
+           NAVIGATION
+           ============================================= */
+
+        .nav {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 28px 0;
+            transition: all 0.6s var(--ease-smooth);
+        }
+
+        .nav::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, var(--bg-void) 0%, transparent 100%);
+            transition: all 0.6s ease;
+        }
+
+        .nav.scrolled {
+            padding: 16px 0;
+        }
+
+        .nav.scrolled::before {
+            background: rgba(8, 7, 6, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        /* Logo - Separated icon and text */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 20px var(--gold-glow));
+        }
+
+        .logo-wordmark {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-name {
+            font-family: var(--font-display);
+            font-size: 18px;
+            letter-spacing: 0.18em;
+            color: var(--text-bright);
+            white-space: nowrap;
+        }
+
+        .logo-tagline {
+            font-size: 9px;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--copper));
+            transition: width 0.4s var(--ease-out);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 14px 32px !important;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
+            color: var(--bg-void) !important;
+            border-radius: 2px;
+            box-shadow: 0 4px 30px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.4s var(--ease-out) !important;
+        }
+
+        .nav-cta::after { display: none !important; }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        /* Mobile Nav */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100vh;
+            background: var(--bg-void);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 32px;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover { color: var(--gold); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .mobile-menu { display: flex; }
+            .nav-inner { padding: 0 24px; }
+            .logo-name { font-size: 15px; }
+        }
+
+        /* =============================================
+           HERO SECTION
+           ============================================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 160px 60px 120px;
+            overflow: hidden;
+        }
+
+        /* Animated Background */
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+        }
+
+        /* Grid Pattern */
+        .hero-grid {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: 
-                linear-gradient(rgba(233, 162, 59, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(233, 162, 59, 0.02) 1px, transparent 1px);
+                linear-gradient(rgba(201, 162, 39, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 162, 39, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
+            animation: gridPulse 8s ease-in-out infinite;
         }
-        
-        .us-outline {
-            stroke: rgba(233, 162, 59, 0.15);
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
         }
-        
-        .connection-lines .connection-line {
-            stroke: var(--accent-primary);
+
+        /* Glowing Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: orbFloat 25s ease-in-out infinite;
         }
-        
-        .node-pulse {
-            fill: var(--accent-primary);
+
+        .orb-1 {
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.12;
+            top: -300px; right: -200px;
         }
-        
-        .node-ring {
-            stroke: var(--accent-primary);
+
+        .orb-2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--copper) 0%, transparent 70%);
+            opacity: 0.1;
+            bottom: -200px; left: -150px;
+            animation-delay: -12s;
         }
-        
-        .node-core {
-            fill: var(--accent-primary);
+
+        .orb-3 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, var(--amber) 0%, transparent 70%);
+            opacity: 0.06;
+            top: 30%; left: 15%;
+            animation-delay: -6s;
         }
-        
-        .node.active .node-ring {
-            stroke: var(--accent-green);
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(40px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 40px) scale(0.95); }
+            75% { transform: translate(30px, 20px) scale(1.02); }
         }
-        
-        .node.active .node-core {
-            fill: var(--accent-green);
+
+        /* Light Rays */
+        .light-rays {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 100%;
+            background: conic-gradient(from 90deg at 50% 0%, transparent 0deg, rgba(201, 162, 39, 0.03) 30deg, transparent 60deg, rgba(201, 162, 39, 0.02) 90deg, transparent 120deg);
+            opacity: 0.8;
         }
-        
-        .node.active .node-status {
-            fill: var(--accent-green);
+
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
         }
-        
-        .data-packet {
-            fill: var(--accent-primary);
+
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleRise 12s ease-in-out infinite;
         }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 25%; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 40%; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 55%; animation-delay: 1s; }
+        .particle:nth-child(5) { left: 70%; animation-delay: 3s; }
+        .particle:nth-child(6) { left: 85%; animation-delay: 5s; }
+
+        @keyframes particleRise {
+            0% { bottom: -10px; opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 32px;
+            background: rgba(201, 162, 39, 0.08);
+            border: 1px solid var(--border-light);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 48px;
+            backdrop-filter: blur(10px);
+            animation: badgeFade 1s var(--ease-out) 0.2s backwards;
+        }
+
+        @keyframes badgeFade {
+            from { opacity: 0; transform: translateY(20px); }
+        }
+
+        .pulse-dot {
+            width: 10px; height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--success-glow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .hero-title {
+            margin-bottom: 36px;
+        }
+
+        .hero-title .line {
+            display: block;
+            font-size: clamp(52px, 11vw, 130px);
+            line-height: 0.92;
+            opacity: 0;
+            transform: translateY(60px);
+            animation: lineReveal 1.2s var(--ease-out) forwards;
+        }
+
+        .line-1 { animation-delay: 0.3s; }
+        .line-2 { animation-delay: 0.45s; }
+        .line-3 { animation-delay: 0.6s; }
+
+        @keyframes lineReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .line-3 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 40%, var(--copper) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 40px var(--gold-glow));
+        }
+
+        .hero-subtitle {
+            font-size: 21px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 56px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeUp 1s var(--ease-out) 0.9s forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 100px;
+            opacity: 0;
+            animation: fadeUp 1s var(--ease-out) 1.1s forwards;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 40px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
+            color: var(--bg-void);
+            border-radius: 3px;
+            box-shadow: 0 4px 30px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 50px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 3px;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 162, 39, 0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-full { width: 100%; }
+
+        /* Stats */
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            opacity: 0;
+            animation: fadeUp 1s var(--ease-out) 1.3s forwards;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 64px;
+            letter-spacing: 0.02em;
+            background: linear-gradient(180deg, var(--text-bright) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(180deg, transparent, var(--border-light), transparent);
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 140px 24px 100px; }
+            .hero-actions { flex-direction: column; gap: 16px; }
+            .hero-stats { flex-direction: column; gap: 40px; }
+            .stat-divider { width: 80px; height: 1px; }
+        }
+
+        /* =============================================
+           SCRIPT FORMATTER TOOL
+           ============================================= */
+
+        .tool-section {
+            padding: 160px 0;
+            position: relative;
+            background: linear-gradient(180deg, var(--bg-void) 0%, var(--bg-deep) 30%, var(--bg-deep) 70%, var(--bg-void) 100%);
+        }
+
+        .tool-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 1px; height: 120px;
+            background: linear-gradient(180deg, transparent, var(--gold));
+        }
+
+        .tool-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--copper), var(--gold));
+        }
+
+        .tool-glow {
+            position: absolute;
+            top: -150px; right: -150px;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 56px;
+            position: relative;
+        }
+
+        .tool-icon-wrap {
+            width: 100px; height: 100px;
+            margin: 0 auto 32px;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(201, 162, 39, 0.05));
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .tool-icon-wrap::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), transparent, var(--copper));
+            opacity: 0.5;
+            z-index: -1;
+            animation: iconSpin 8s linear infinite;
+        }
+
+        @keyframes iconSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .tool-icon-wrap svg {
+            width: 44px; height: 44px;
+            stroke: var(--gold);
+        }
+
+        .tool-title {
+            font-size: 38px;
+            margin-bottom: 16px;
+            letter-spacing: 0.08em;
+        }
+
+        .tool-desc {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Upload Zone */
+        .upload-zone {
+            border: 2px dashed var(--border-light);
+            border-radius: 8px;
+            padding: 80px 48px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            background: rgba(201, 162, 39, 0.02);
+        }
+
+        .upload-zone:hover,
+        .upload-zone.dragover {
+            border-color: var(--gold);
+            background: rgba(201, 162, 39, 0.06);
+        }
+
+        .upload-zone input {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            width: 72px; height: 72px;
+            margin: 0 auto 28px;
+            stroke: var(--text-muted);
+            transition: all 0.4s ease;
+        }
+
+        .upload-zone:hover .upload-icon {
+            stroke: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .upload-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .upload-hint {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Output */
+        .tool-output {
+            margin-top: 40px;
+            display: none;
+        }
+
+        .tool-output.active { display: block; }
+
+        .output-preview {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 14px;
+            color: var(--text-secondary);
+            background: var(--bg-void);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 28px;
+            max-height: 280px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .tool-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .tool-card { padding: 48px 28px; }
+            .upload-zone { padding: 60px 24px; }
+        }
+
+        /* =============================================
+           NETWORK SECTION
+           ============================================= */
+
+        .network-section {
+            padding: 160px 0;
+            position: relative;
+        }
+
+        .network-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            opacity: 0.4;
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .section-header.center { text-align: center; }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 6vw, 72px);
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+
+        .section-subtitle {
+            font-size: 19px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-top: 24px;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .section-header.center .section-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* State Cards */
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
+        }
+
+        .state-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 44px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s var(--ease-out);
+        }
+
+        .state-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.04), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .state-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--copper));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--ease-out);
+        }
+
+        .state-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--border-light);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 60px rgba(201, 162, 39, 0.08);
+        }
+
+        .state-card:hover::before { opacity: 1; }
+        .state-card:hover::after { transform: scaleX(1); }
+
+        .state-card.active {
+            border-color: rgba(92, 184, 92, 0.25);
+        }
+
+        .state-card.active::after {
+            background: var(--success);
+            transform: scaleX(1);
+        }
+
+        .state-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .status-indicator {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--text-muted);
+        }
+
+        .status-indicator.live {
+            background: var(--success);
+            box-shadow: 0 0 15px var(--success-glow);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .state-card h3 {
+            font-size: 28px;
+            letter-spacing: 0.06em;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .state-region {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .state-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .state-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .state-tags span {
+            padding: 10px 18px;
+            background: var(--bg-deep);
+            border: 1px solid var(--border);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .state-card:hover .state-tags span {
+            border-color: var(--border-light);
+        }
+
+        .btn-state {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: rgba(201, 162, 39, 0.08);
+            border: 1px solid var(--border-light);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-radius: 3px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .btn-state svg {
+            width: 16px; height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-state:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--bg-void);
+        }
+
+        .btn-state:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* =============================================
+           CONTACT SECTION
+           ============================================= */
+
+        .contact-section {
+            padding: 160px 0;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.4;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 100px;
+        }
+
+        .contact-intro h2 {
+            margin-bottom: 24px;
+        }
+
+        .contact-tagline {
+            font-size: 22px;
+            font-weight: 300;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .contact-intro > p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.4s ease;
+        }
+
+        .contact-method:hover {
+            border-color: var(--border-light);
+            transform: translateX(8px);
+        }
+
+        .method-icon {
+            width: 56px; height: 56px;
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .method-icon svg {
+            width: 24px; height: 24px;
+            stroke: var(--gold);
+        }
+
+        .contact-method span {
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method:hover span {
+            color: var(--gold);
+        }
+
+        /* Contact Form */
+        .contact-form-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 64px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--copper), var(--gold));
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-group label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 18px 22px;
+            background: var(--bg-deep);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--bg-void);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23a89d8a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Checkbox Group */
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .checkbox-item:hover { color: var(--text-primary); }
+
+        .checkbox-item input { display: none; }
+
+        .checkbox-box {
+            width: 24px; height: 24px;
+            border: 1px solid var(--border-light);
+            background: var(--bg-deep);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-item input:checked + .checkbox-box {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .checkbox-item input:checked + .checkbox-box::after {
+            content: '✓';
+            color: var(--bg-void);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-form-card { padding: 40px 28px; }
+        }
+
+        /* =============================================
+           FOOTER
+           ============================================= */
+
+        .footer {
+            padding: 100px 0 48px;
+            background: var(--bg-deep);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 24px;
+        }
+
+        .footer-brand > p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .footer h4 {
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 15px;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        .link-badge {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 5px 12px;
+            background: var(--bg-void);
+            border-radius: 100px;
+            color: var(--text-muted);
+        }
+
+        .link-badge.live {
+            background: rgba(92, 184, 92, 0.15);
+            color: var(--success);
+        }
+
+        .footer-contact a {
+            display: block;
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 48px; }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-void); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        ::selection { background: var(--gold); color: var(--bg-void); }
     </style>
 </head>
 <body>
-    <!-- Scan Line Overlay -->
-    <div class="scanlines"></div>
-    
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
+        <div class="nav-inner">
             <a href="#" class="logo">
-                <img src="images/logo.svg" alt="National Teleprompter" class="logo-img">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="46" fill="#c9a227"/>
+                        <rect x="20" y="72" width="60" height="7" rx="2" fill="#141210"/>
+                        <rect x="36" y="64" width="28" height="10" rx="2" fill="#141210"/>
+                        <path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#141210"/>
+                        <rect x="21" y="16" width="58" height="44" rx="3" fill="#211e1a"/>
+                        <path d="M28 32L36 28L44 33L50 24L58 26L66 20L74 24" stroke="#c9a227" stroke-width="2.5" fill="none" opacity="0.7"/>
+                        <line x1="28" y1="42" x2="56" y2="42" stroke="#c9a227" stroke-width="2.5" opacity="0.5"/>
+                        <line x1="28" y1="50" x2="66" y2="50" stroke="#c9a227" stroke-width="2.5" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="logo-wordmark">
+                    <span class="logo-name">NATIONAL TELEPROMPTER</span>
+                    <span class="logo-tagline">Powering Outstanding Performances</span>
+                </div>
             </a>
+            
             <div class="nav-links">
+                <a href="#tool">Script Formatter</a>
                 <a href="#network">Network</a>
-                <a href="#services">Services</a>
-                <a href="#coverage">Coverage</a>
                 <a href="#contact" class="nav-cta">Get a Quote</a>
             </div>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
+        <a href="#tool">Script Formatter</a>
         <a href="#network">Network</a>
-        <a href="#services">Services</a>
-        <a href="#coverage">Coverage</a>
         <a href="#contact">Get a Quote</a>
     </div>
 
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-bg">
-            <div class="grid-overlay"></div>
-            <div class="network-lines"></div>
-        </div>
-        
-        <!-- Animated Network Map -->
-        <div class="network-map" id="networkMap">
-            <svg viewBox="0 0 960 600" class="us-map-svg">
-                <!-- Simplified US outline path -->
-                <path class="us-outline" d="M 158 125 L 234 122 L 250 114 L 270 115 L 285 132 L 310 125 L 340 130 L 365 115 L 395 125 L 430 120 L 470 125 L 510 118 L 550 122 L 590 115 L 630 120 L 680 118 L 730 125 L 770 130 L 800 145 L 825 160 L 850 185 L 855 220 L 850 260 L 840 300 L 820 340 L 800 380 L 790 410 L 810 440 L 830 470 L 815 485 L 780 478 L 750 470 L 700 475 L 650 485 L 600 490 L 550 488 L 500 495 L 450 490 L 400 485 L 350 488 L 300 492 L 250 485 L 200 475 L 170 455 L 150 420 L 145 380 L 155 340 L 150 300 L 140 260 L 135 220 L 140 180 L 150 150 Z" fill="none" stroke="rgba(233,162,59,0.1)" stroke-width="2"/>
-                
-                <!-- Network Connection Lines -->
-                <g class="connection-lines">
-                    <line class="connection-line" x1="780" y1="380" x2="720" y2="280"/>
-                    <line class="connection-line" x1="720" y1="280" x2="580" y2="320"/>
-                    <line class="connection-line" x1="580" y1="320" x2="500" y2="300"/>
-                    <line class="connection-line" x1="780" y1="380" x2="580" y2="320"/>
-                    <line class="connection-line" x1="720" y1="280" x2="500" y2="300"/>
-                </g>
-                
-                <!-- State Nodes -->
-                <g class="network-nodes">
-                    <!-- Florida -->
-                    <g class="node node-florida active" data-state="florida">
-                        <circle class="node-pulse" cx="780" cy="380" r="30"/>
-                        <circle class="node-ring" cx="780" cy="380" r="18"/>
-                        <circle class="node-core" cx="780" cy="380" r="8"/>
-                        <text class="node-label" x="780" y="420">FLORIDA</text>
-                        <text class="node-status" x="780" y="438">ACTIVE</text>
-                    </g>
-                    
-                    <!-- New York -->
-                    <g class="node node-newyork" data-state="newyork">
-                        <circle class="node-pulse" cx="820" cy="200" r="30"/>
-                        <circle class="node-ring" cx="820" cy="200" r="18"/>
-                        <circle class="node-core" cx="820" cy="200" r="8"/>
-                        <text class="node-label" x="820" y="240">NEW YORK</text>
-                        <text class="node-status" x="820" y="258">COMING SOON</text>
-                    </g>
-                    
-                    <!-- Pennsylvania -->
-                    <g class="node node-pennsylvania" data-state="pennsylvania">
-                        <circle class="node-pulse" cx="760" cy="240" r="30"/>
-                        <circle class="node-ring" cx="760" cy="240" r="18"/>
-                        <circle class="node-core" cx="760" cy="240" r="8"/>
-                        <text class="node-label" x="760" y="200">PENNSYLVANIA</text>
-                        <text class="node-status" x="760" y="218">COMING SOON</text>
-                    </g>
-                    
-                    <!-- Ohio -->
-                    <g class="node node-ohio" data-state="ohio">
-                        <circle class="node-pulse" cx="680" cy="260" r="30"/>
-                        <circle class="node-ring" cx="680" cy="260" r="18"/>
-                        <circle class="node-core" cx="680" cy="260" r="8"/>
-                        <text class="node-label" x="680" y="225">OHIO</text>
-                        <text class="node-status" x="680" y="243">COMING SOON</text>
-                    </g>
-                    
-                    <!-- Georgia -->
-                    <g class="node node-georgia" data-state="georgia">
-                        <circle class="node-pulse" cx="720" cy="350" r="30"/>
-                        <circle class="node-ring" cx="720" cy="350" r="18"/>
-                        <circle class="node-core" cx="720" cy="350" r="8"/>
-                        <text class="node-label" x="720" y="310">GEORGIA</text>
-                        <text class="node-status" x="720" y="328">COMING SOON</text>
-                    </g>
-                </g>
-                
-                <!-- Data streams animation -->
-                <g class="data-streams">
-                    <circle class="data-packet" r="3">
-                        <animateMotion dur="3s" repeatCount="indefinite" path="M780,380 L720,280 L580,320"/>
-                    </circle>
-                    <circle class="data-packet" r="3">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M720,280 L500,300 L580,320"/>
-                    </circle>
-                </g>
-            </svg>
+            <div class="hero-grid"></div>
+            <div class="light-rays"></div>
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
         </div>
 
         <div class="hero-content">
             <div class="hero-badge">
-                <span class="live-dot"></span>
+                <span class="pulse-dot"></span>
                 NETWORK ACTIVE
             </div>
+            
             <h1 class="hero-title">
                 <span class="line line-1">ONE NETWORK</span>
                 <span class="line line-2">EVERY STAGE</span>
                 <span class="line line-3"><em>NATIONWIDE</em></span>
             </h1>
+            
             <p class="hero-subtitle">
-                Professional teleprompter operators, consistent standards, and seamless coordination across multiple states.
+                Professional teleprompter operators with consistent standards and seamless coordination across multiple states. Production-grade service, everywhere.
             </p>
+            
             <div class="hero-actions">
-                <a href="#network" class="btn btn-primary">
-                    <span>Find Your Market</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
+                <a href="#tool" class="btn btn-primary">
+                    <span>Try Script Formatter</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <a href="#contact" class="btn btn-secondary">Request National Quote</a>
+                <a href="#contact" class="btn btn-secondary">Request Quote</a>
             </div>
+            
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number" data-count="1000">1000+</span>
-                    <span class="stat-label">Shows Completed</span>
+                    <span class="stat-value">1000+</span>
+                    <span class="stat-label">Shows</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">States in Network</span>
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">States</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
-                    <span class="stat-number">25+</span>
-                    <span class="stat-label">Years Experience</span>
+                    <span class="stat-value">25+</span>
+                    <span class="stat-label">Years</span>
                 </div>
             </div>
         </div>
-        
-        <div class="scroll-indicator">
-            <span>Explore Network</span>
-            <div class="scroll-line"></div>
-        </div>
     </header>
+
+    <!-- Script Formatter Tool -->
+    <section id="tool" class="tool-section">
+        <div class="container">
+            <div class="tool-wrapper">
+                <div class="tool-card reveal">
+                    <div class="tool-glow"></div>
+                    
+                    <div class="tool-header">
+                        <div class="tool-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <line x1="10" y1="9" x2="8" y2="9"/>
+                            </svg>
+                        </div>
+                        <h2 class="tool-title">AI SCRIPT FORMATTER</h2>
+                        <p class="tool-desc">Upload your script and download a teleprompter-ready RTF file with line breaks after every sentence for smooth scrolling.</p>
+                    </div>
+                    
+                    <div class="upload-zone" id="uploadZone">
+                        <input type="file" id="scriptFile" accept=".txt,.doc,.docx,.rtf">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <p class="upload-title">DROP YOUR SCRIPT HERE</p>
+                        <p class="upload-hint">or click to browse • TXT files supported</p>
+                    </div>
+                    
+                    <div class="tool-output" id="toolOutput">
+                        <div class="output-preview" id="outputPreview"></div>
+                        <div class="tool-actions">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <span>Download RTF</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            </button>
+                            <button class="btn btn-secondary" id="resetBtn">
+                                <span>Format Another</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Network Section -->
     <section id="network" class="network-section">
         <div class="container">
-            <div class="section-header center">
+            <div class="section-header center reveal">
                 <span class="section-tag">THE NETWORK</span>
-                <h2 class="section-title">THE NATIONAL TELEPROMPTER NETWORK</h2>
-                <p class="section-subtitle">Local expertise. National reach. One smooth experience.</p>
+                <h2 class="section-title">NATIONAL TELEPROMPTER NETWORK</h2>
+                <p class="section-subtitle">Local expertise meets national reach. One seamless experience across every market.</p>
             </div>
             
             <div class="network-grid">
-                <!-- Florida - Active -->
-                <div class="state-card active" data-state="florida">
+                <div class="state-card active reveal reveal-delay-1">
                     <div class="state-status">
-                        <span class="status-dot active"></span>
+                        <span class="status-indicator live"></span>
                         ACTIVE
                     </div>
-                    <div class="state-accent"></div>
                     <h3>Florida Teleprompter</h3>
                     <p class="state-region">Tampa Bay • Miami • Orlando • Jacksonville</p>
-                    <p class="state-desc">Our flagship operation. 25+ years serving the Southeast with professional teleprompter services for live events, broadcasts, and video production.</p>
-                    <div class="state-services">
+                    <p class="state-desc">Our flagship operation. 25+ years serving the Southeast with production-grade teleprompter services.</p>
+                    <div class="state-tags">
                         <span>Live Events</span>
                         <span>Video</span>
                         <span>Corporate</span>
                     </div>
-                    <a href="https://floridateleprompter.com" class="btn btn-state" target="_blank">
-                        View Florida Site
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                    <a href="https://floridateleprompter.com" class="btn-state" target="_blank">
+                        Visit Florida Site
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
                 
-                <!-- Ohio -->
-                <div class="state-card" data-state="ohio">
+                <div class="state-card reveal reveal-delay-2">
                     <div class="state-status">
-                        <span class="status-dot"></span>
+                        <span class="status-indicator"></span>
                         COMING SOON
                     </div>
-                    <div class="state-accent"></div>
                     <h3>Ohio Teleprompter</h3>
-                    <p class="state-region">Columbus • Cleveland • Cincinnati • Dayton</p>
-                    <p class="state-desc">Expanding into the Midwest. Professional teleprompter services for Ohio's thriving corporate and event markets.</p>
-                    <div class="state-services">
+                    <p class="state-region">Columbus • Cleveland • Cincinnati</p>
+                    <p class="state-desc">Expanding into the Midwest. Professional coverage for Ohio's corporate and event markets.</p>
+                    <div class="state-tags">
                         <span>Live Events</span>
                         <span>Video</span>
                         <span>Corporate</span>
                     </div>
-                    <a href="#contact" class="btn btn-state">
-                        Get a Quote in Ohio
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                    <a href="#contact" class="btn-state">
+                        Get a Quote
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
                 
-                <!-- Georgia -->
-                <div class="state-card" data-state="georgia">
+                <div class="state-card reveal reveal-delay-3">
                     <div class="state-status">
-                        <span class="status-dot"></span>
+                        <span class="status-indicator"></span>
                         COMING SOON
                     </div>
-                    <div class="state-accent"></div>
                     <h3>Georgia Teleprompter</h3>
-                    <p class="state-region">Atlanta • Savannah • Augusta • Athens</p>
-                    <p class="state-desc">Serving Georgia's booming film and production industry with reliable, professional teleprompter operations.</p>
-                    <div class="state-services">
+                    <p class="state-region">Atlanta • Savannah • Augusta</p>
+                    <p class="state-desc">Serving Georgia's booming film and production industry with reliable operations.</p>
+                    <div class="state-tags">
                         <span>Live Events</span>
                         <span>Video</span>
                         <span>Corporate</span>
                     </div>
-                    <a href="#contact" class="btn btn-state">
-                        Get a Quote in Georgia
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                    <a href="#contact" class="btn-state">
+                        Get a Quote
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
                 
-                <!-- Pennsylvania -->
-                <div class="state-card" data-state="pennsylvania">
+                <div class="state-card reveal reveal-delay-1">
                     <div class="state-status">
-                        <span class="status-dot"></span>
+                        <span class="status-indicator"></span>
                         COMING SOON
                     </div>
-                    <div class="state-accent"></div>
                     <h3>Pennsylvania Teleprompter</h3>
-                    <p class="state-region">Philadelphia • Pittsburgh • Harrisburg • Allentown</p>
-                    <p class="state-desc">Northeast coverage for Pennsylvania's corporate headquarters and production studios.</p>
-                    <div class="state-services">
+                    <p class="state-region">Philadelphia • Pittsburgh</p>
+                    <p class="state-desc">Northeast coverage for Pennsylvania's corporate headquarters and studios.</p>
+                    <div class="state-tags">
                         <span>Live Events</span>
                         <span>Video</span>
                         <span>Corporate</span>
                     </div>
-                    <a href="#contact" class="btn btn-state">
-                        Get a Quote in Pennsylvania
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                    <a href="#contact" class="btn-state">
+                        Get a Quote
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
                 
-                <!-- New York -->
-                <div class="state-card" data-state="newyork">
+                <div class="state-card reveal reveal-delay-2">
                     <div class="state-status">
-                        <span class="status-dot"></span>
+                        <span class="status-indicator"></span>
                         COMING SOON
                     </div>
-                    <div class="state-accent"></div>
                     <h3>New York Teleprompter</h3>
-                    <p class="state-region">New York City • Buffalo • Albany • Syracuse</p>
-                    <p class="state-desc">Premium market coverage for the media capital of the world. Broadcast, corporate, and live event specialists.</p>
-                    <div class="state-services">
-                        <span>Live Events</span>
-                        <span>Video</span>
+                    <p class="state-region">New York City • Buffalo • Albany</p>
+                    <p class="state-desc">Premium market coverage for the media capital. Broadcast, corporate, and events.</p>
+                    <div class="state-tags">
                         <span>Broadcast</span>
+                        <span>Corporate</span>
+                        <span>Live Events</span>
                     </div>
-                    <a href="#contact" class="btn btn-state">
-                        Get a Quote in New York
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                    <a href="#contact" class="btn-state">
+                        Get a Quote
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why National Section -->
-    <section class="why-section">
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-content">
-                    <span class="section-tag">WHY NATIONAL</span>
-                    <h2 class="section-title">WHY WORK WITH A NATIONAL NETWORK?</h2>
-                    <div class="why-points">
-                        <div class="why-point">
-                            <div class="point-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                            </div>
-                            <div class="point-text">
-                                <h4>One Vendor, Multiple Cities</h4>
-                                <p>Simplify your production logistics with a single point of contact for multi-city and multi-state work.</p>
-                            </div>
-                        </div>
-                        <div class="why-point">
-                            <div class="point-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
-                            <div class="point-text">
-                                <h4>Consistent Standards</h4>
-                                <p>Same gear, same training, same quality expectations at every location in our network.</p>
-                            </div>
-                        </div>
-                        <div class="why-point">
-                            <div class="point-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                            </div>
-                            <div class="point-text">
-                                <h4>Faster Coordination</h4>
-                                <p>Central scheduling means faster response across time zones and seamless handoffs between markets.</p>
-                            </div>
-                        </div>
-                        <div class="why-point">
-                            <div class="point-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                                    <polyline points="17 6 23 6 23 12"/>
-                                </svg>
-                            </div>
-                            <div class="point-text">
-                                <h4>Scales With You</h4>
-                                <p>From single events to national tours and corporate roadshows—we grow with your production footprint.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-visual">
-                    <div class="network-diagram">
-                        <div class="diagram-center">
-                            <span>NATIONAL<br>HQ</span>
-                        </div>
-                        <div class="diagram-node node-1"><span>FL</span></div>
-                        <div class="diagram-node node-2"><span>OH</span></div>
-                        <div class="diagram-node node-3"><span>GA</span></div>
-                        <div class="diagram-node node-4"><span>PA</span></div>
-                        <div class="diagram-node node-5"><span>NY</span></div>
-                        <svg class="diagram-lines" viewBox="0 0 300 300">
-                            <line x1="150" y1="150" x2="150" y2="30"/>
-                            <line x1="150" y1="150" x2="265" y2="100"/>
-                            <line x1="150" y1="150" x2="265" y2="200"/>
-                            <line x1="150" y1="150" x2="150" y2="270"/>
-                            <line x1="150" y1="150" x2="35" y2="150"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">SERVICES</span>
-                <h2 class="section-title">SERVICES WE PROVIDE</h2>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="32" cy="32" r="28"/>
-                            <path d="M26 22v20l18-10z"/>
-                        </svg>
-                    </div>
-                    <h3>LIVE EVENTS</h3>
-                    <p>Conferences, keynotes, panels, political events, and corporate gatherings. Our operators stay in sync with the room and keep talent composed under pressure.</p>
-                    <ul class="service-list">
-                        <li>Conferences</li>
-                        <li>Keynotes</li>
-                        <li>Panels</li>
-                        <li>Political + Corporate Events</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="8" y="14" width="48" height="36" rx="2"/>
-                            <path d="M8 24h48M24 14v10"/>
-                        </svg>
-                    </div>
-                    <h3>VIDEO PRODUCTION</h3>
-                    <p>From commercial shoots to corporate videos, agency productions to social content. We shape flow, rehearse delivery, and keep takes sharp.</p>
-                    <ul class="service-list">
-                        <li>Commercial Shoots</li>
-                        <li>Corporate Videos</li>
-                        <li>Agency Productions</li>
-                        <li>Social Content</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="12" y="8" width="40" height="48" rx="2"/>
-                            <line x1="20" y1="20" x2="44" y2="20"/>
-                            <line x1="20" y1="28" x2="44" y2="28"/>
-                            <line x1="20" y1="36" x2="36" y2="36"/>
-                        </svg>
-                    </div>
-                    <h3>EXECUTIVE COMMS</h3>
-                    <p>Earnings calls, investor presentations, internal communications, and board meetings. Confidential, professional, precise.</p>
-                    <ul class="service-list">
-                        <li>Earnings Calls</li>
-                        <li>Investor Presentations</li>
-                        <li>Internal Communications</li>
-                        <li>Board Meetings</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="20" cy="32" r="8"/>
-                            <circle cx="44" cy="32" r="8"/>
-                            <line x1="28" y1="32" x2="36" y2="32"/>
-                            <circle cx="32" cy="16" r="6"/>
-                            <circle cx="32" cy="48" r="6"/>
-                            <line x1="32" y1="22" x2="32" y2="42"/>
-                        </svg>
-                    </div>
-                    <h3>MULTI-CITY CAMPAIGNS</h3>
-                    <p>Matching setups across multiple states with standardized configurations. One vendor, efficient scheduling, consistent delivery everywhere.</p>
-                    <ul class="service-list">
-                        <li>National Tours</li>
-                        <li>Corporate Roadshows</li>
-                        <li>Multi-Market Campaigns</li>
-                        <li>Standardized Configurations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coverage Map Section -->
-    <section id="coverage" class="coverage-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">COVERAGE</span>
-                <h2 class="section-title">WHERE WE OPERATE</h2>
-                <p class="section-subtitle">Explore active markets and see which states are coming online next.</p>
-            </div>
-            
-            <div class="coverage-map-container">
-                <div class="coverage-legend">
-                    <div class="legend-item">
-                        <span class="legend-dot active"></span>
-                        Active Markets
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot coming"></span>
-                        Coming Soon
-                    </div>
-                </div>
-                
-                <div class="coverage-states">
-                    <a href="https://floridateleprompter.com" class="coverage-state active" target="_blank">
-                        <span class="state-abbr">FL</span>
-                        <span class="state-name">Florida</span>
-                        <span class="state-tag">Active</span>
-                    </a>
-                    <a href="#contact" class="coverage-state coming">
-                        <span class="state-abbr">OH</span>
-                        <span class="state-name">Ohio</span>
-                        <span class="state-tag">Coming Soon</span>
-                    </a>
-                    <a href="#contact" class="coverage-state coming">
-                        <span class="state-abbr">GA</span>
-                        <span class="state-name">Georgia</span>
-                        <span class="state-tag">Coming Soon</span>
-                    </a>
-                    <a href="#contact" class="coverage-state coming">
-                        <span class="state-abbr">PA</span>
-                        <span class="state-name">Pennsylvania</span>
-                        <span class="state-tag">Coming Soon</span>
-                    </a>
-                    <a href="#contact" class="coverage-state coming">
-                        <span class="state-abbr">NY</span>
-                        <span class="state-name">New York</span>
-                        <span class="state-tag">Coming Soon</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section class="proof-section">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">TRUSTED</span>
-                <h2 class="section-title">TRUSTED ACROSS EVENTS, BROADCAST, AND PRODUCTION</h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <p>We needed a reliable teleprompter team across three cities. This network made everything seamless—same quality, same professionalism at every stop.</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">PRODUCTION MANAGER</span>
-                        <span class="author-company">National Corporate Event</span>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <p>I could not recommend Jason enough! He has quickly become my favorite and most reliable teleprompter service provider across the nation.</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">CORTEZ CREATIVE</span>
-                        <span class="author-company">30+ Cities Annually</span>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-quote">"</div>
-                    <p>Professional, reliable, and great with clients. Always a pleasure working with them on productions of any scale.</p>
-                    <div class="testimonial-author">
-                        <span class="author-name">ANDREW LEE</span>
-                        <span class="author-company">Roundhouse Creative</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="client-logos">
-                <div class="logo-track">
-                    <div class="client-logo">Tampa Bay Buccaneers</div>
-                    <div class="client-logo">NASCAR</div>
-                    <div class="client-logo">NHL All-Star Game</div>
-                    <div class="client-logo">Ford</div>
-                    <div class="client-logo">Publix</div>
-                    <div class="client-logo">The Home Depot</div>
-                    <div class="client-logo">City of Tampa</div>
-                    <div class="client-logo">Mindvalley</div>
-                    <div class="client-logo">Tampa Bay Buccaneers</div>
-                    <div class="client-logo">NASCAR</div>
-                    <div class="client-logo">NHL All-Star Game</div>
-                    <div class="client-logo">Ford</div>
                 </div>
             </div>
         </div>
@@ -651,26 +1614,26 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-intro reveal">
                     <span class="section-tag">BOOK NOW</span>
-                    <h2 class="section-title">BOOK A TELEPROMPTER OPERATOR</h2>
-                    <p class="contact-subtitle">One form. Any city. Any state in the network.</p>
+                    <h2 class="section-title">GET A QUOTE</h2>
+                    <p class="contact-tagline">One form. Any state in the network.</p>
                     <p>Whether you need coverage in one city or coordinated service across multiple states, we'll connect you with the right team and provide a comprehensive quote.</p>
                     
-                    <div class="contact-details">
-                        <a href="mailto:info@nationalteleprompter.com" class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <div class="contact-methods">
+                        <a href="mailto:info@nationalteleprompter.com" class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                     <polyline points="22,6 12,13 2,6"/>
                                 </svg>
                             </div>
                             <span>info@nationalteleprompter.com</span>
                         </a>
-                        <a href="tel:727-623-2652" class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        <a href="tel:727-623-2652" class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                                 </svg>
                             </div>
                             <span>727-623-2652</span>
@@ -678,88 +1641,75 @@
                     </div>
                 </div>
                 
-                <div class="contact-form-wrapper">
+                <div class="contact-form-card reveal reveal-delay-1">
                     <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <label>Full Name</label>
+                                <input type="text" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company">
+                                <label>Company</label>
+                                <input type="text" name="company">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <label>Email</label>
+                                <input type="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="phone">Mobile</label>
-                                <input type="tel" id="phone" name="phone">
+                                <label>Phone</label>
+                                <input type="tel" name="phone">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="cities">Event City / Cities</label>
-                                <input type="text" id="cities" name="cities" placeholder="e.g., Miami, Atlanta, New York">
+                                <label>Event Cities</label>
+                                <input type="text" name="cities" placeholder="Miami, Atlanta, NYC...">
                             </div>
                             <div class="form-group">
-                                <label for="dates">Event Dates</label>
-                                <input type="text" id="dates" name="dates" placeholder="e.g., March 15-17, 2025">
+                                <label>Event Dates</label>
+                                <input type="text" name="dates" placeholder="March 15-17, 2025">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="production-type">Type of Production</label>
-                            <select id="production-type" name="production-type">
-                                <option value="">Select production type</option>
-                                <option value="live-event">Live Event / Conference</option>
-                                <option value="video-production">Video Production</option>
-                                <option value="executive-comms">Executive Communications</option>
-                                <option value="multi-city">Multi-City Campaign</option>
-                                <option value="other">Other</option>
-                            </select>
                         </div>
                         <div class="form-group">
                             <label>States Needed</label>
                             <div class="checkbox-group">
-                                <label class="checkbox-label">
+                                <label class="checkbox-item">
                                     <input type="checkbox" name="states" value="florida">
-                                    <span class="checkmark"></span>
+                                    <span class="checkbox-box"></span>
                                     Florida
                                 </label>
-                                <label class="checkbox-label">
+                                <label class="checkbox-item">
                                     <input type="checkbox" name="states" value="ohio">
-                                    <span class="checkmark"></span>
+                                    <span class="checkbox-box"></span>
                                     Ohio
                                 </label>
-                                <label class="checkbox-label">
+                                <label class="checkbox-item">
                                     <input type="checkbox" name="states" value="georgia">
-                                    <span class="checkmark"></span>
+                                    <span class="checkbox-box"></span>
                                     Georgia
                                 </label>
-                                <label class="checkbox-label">
+                                <label class="checkbox-item">
                                     <input type="checkbox" name="states" value="pennsylvania">
-                                    <span class="checkmark"></span>
+                                    <span class="checkbox-box"></span>
                                     Pennsylvania
                                 </label>
-                                <label class="checkbox-label">
+                                <label class="checkbox-item">
                                     <input type="checkbox" name="states" value="newyork">
-                                    <span class="checkmark"></span>
+                                    <span class="checkbox-box"></span>
                                     New York
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="notes">Additional Notes</label>
-                            <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your production..."></textarea>
+                            <label>Project Details</label>
+                            <textarea name="details" placeholder="Tell us about your production..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
-                            <span>Submit Booking Request</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                            </svg>
+                            <span>Submit Request</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                         </button>
                     </form>
                 </div>
@@ -770,50 +1720,196 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="images/logo.svg" alt="National Teleprompter" class="logo-img">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="46" fill="#c9a227"/>
+                                <rect x="20" y="72" width="60" height="7" rx="2" fill="#141210"/>
+                                <rect x="36" y="64" width="28" height="10" rx="2" fill="#141210"/>
+                                <path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#141210"/>
+                                <rect x="21" y="16" width="58" height="44" rx="3" fill="#211e1a"/>
+                            </svg>
+                        </div>
+                        <div class="logo-wordmark">
+                            <span class="logo-name">NATIONAL TELEPROMPTER</span>
+                        </div>
                     </a>
-                    <p>The National Teleprompter Network.<br>Professional teleprompting services coast to coast.</p>
+                    <p>Professional teleprompting services with local expertise and national reach.</p>
                 </div>
-                <div class="footer-network">
+                
+                <div class="footer-nav">
                     <h4>THE NETWORK</h4>
-                    <div class="network-links">
+                    <div class="footer-links">
                         <a href="https://floridateleprompter.com" target="_blank">
-                            Florida Teleprompter
-                            <span class="link-status active">Active</span>
+                            Florida
+                            <span class="link-badge live">Active</span>
                         </a>
-                        <a href="#">
-                            Ohio Teleprompter
-                            <span class="link-status">Coming Soon</span>
-                        </a>
-                        <a href="#">
-                            Georgia Teleprompter
-                            <span class="link-status">Coming Soon</span>
-                        </a>
-                        <a href="#">
-                            Pennsylvania Teleprompter
-                            <span class="link-status">Coming Soon</span>
-                        </a>
-                        <a href="#">
-                            New York Teleprompter
-                            <span class="link-status">Coming Soon</span>
-                        </a>
+                        <a href="#">Ohio <span class="link-badge">Soon</span></a>
+                        <a href="#">Georgia <span class="link-badge">Soon</span></a>
+                        <a href="#">Pennsylvania <span class="link-badge">Soon</span></a>
+                        <a href="#">New York <span class="link-badge">Soon</span></a>
                     </div>
                 </div>
+                
                 <div class="footer-contact">
                     <h4>CONTACT</h4>
                     <a href="mailto:info@nationalteleprompter.com">info@nationalteleprompter.com</a>
                     <a href="tel:727-623-2652">727-623-2652</a>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 National Teleprompter. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Navigation scroll
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // Mobile menu
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileToggle?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - nav.offsetHeight - 30,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '-60px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Script Formatter
+        const uploadZone = document.getElementById('uploadZone');
+        const scriptFile = document.getElementById('scriptFile');
+        const toolOutput = document.getElementById('toolOutput');
+        const outputPreview = document.getElementById('outputPreview');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        let formattedText = '';
+
+        uploadZone?.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone?.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone?.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            if (e.dataTransfer.files[0]) processFile(e.dataTransfer.files[0]);
+        });
+
+        scriptFile?.addEventListener('change', (e) => {
+            if (e.target.files[0]) processFile(e.target.files[0]);
+        });
+
+        function processFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const text = e.target.result;
+                formattedText = formatScript(text);
+                outputPreview.textContent = formattedText;
+                toolOutput.classList.add('active');
+                uploadZone.style.display = 'none';
+            };
+            reader.readAsText(file);
+        }
+
+        function formatScript(text) {
+            // Add double line break after sentence-ending punctuation
+            let formatted = text
+                .replace(/\. /g, '.\n\n')
+                .replace(/\? /g, '?\n\n')
+                .replace(/\! /g, '!\n\n')
+                .replace(/\: /g, ':\n\n')
+                .replace(/\; /g, ';\n\n')
+                // Preserve common abbreviations
+                .replace(/Mr\.\n\n/g, 'Mr. ')
+                .replace(/Mrs\.\n\n/g, 'Mrs. ')
+                .replace(/Ms\.\n\n/g, 'Ms. ')
+                .replace(/Dr\.\n\n/g, 'Dr. ')
+                .replace(/Jr\.\n\n/g, 'Jr. ')
+                .replace(/Sr\.\n\n/g, 'Sr. ')
+                .replace(/vs\.\n\n/g, 'vs. ')
+                .replace(/etc\.\n\n/g, 'etc. ')
+                .replace(/i\.e\.\n\n/g, 'i.e. ')
+                .replace(/e\.g\.\n\n/g, 'e.g. ')
+                .replace(/U\.S\.\n\n/g, 'U.S. ')
+                .replace(/a\.m\.\n\n/g, 'a.m. ')
+                .replace(/p\.m\.\n\n/g, 'p.m. ');
+            
+            return formatted.trim();
+        }
+
+        downloadBtn?.addEventListener('click', () => {
+            // Create RTF with larger font for teleprompter
+            const rtfContent = '{\\rtf1\\ansi\\deff0 {\\fonttbl {\\f0 Arial;}}\\f0\\fs44 ' + 
+                formattedText
+                    .replace(/\\/g, '\\\\')
+                    .replace(/\{/g, '\\{')
+                    .replace(/\}/g, '\\}')
+                    .replace(/\n/g, '\\par\\par ')
+                + '}';
+            
+            const blob = new Blob([rtfContent], { type: 'application/rtf' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'teleprompter-script.rtf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        resetBtn?.addEventListener('click', () => {
+            toolOutput.classList.remove('active');
+            uploadZone.style.display = 'block';
+            scriptFile.value = '';
+            formattedText = '';
+        });
+
+        console.log('%c NATIONAL TELEPROMPTER ', 'background: #c9a227; color: #080706; font-size: 14px; font-weight: bold; padding: 8px 16px;');
+    </script>
 </body>
 </html>
