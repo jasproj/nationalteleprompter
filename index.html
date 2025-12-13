@@ -3,36 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Teleprompter | Professional Teleprompting Network</title>
-    <meta name="description" content="National teleprompter services with local expertise. Professional operators across Florida, Ohio, Georgia, Pennsylvania, and New York.">
+    <title>National Teleprompter | Professional Teleprompter Services Across America</title>
+    <meta name="description" content="Professional teleprompter services across Florida, Ohio, Georgia, Pennsylvania, and New York. Experienced operators for live events, corporate productions, video shoots & broadcast. 25+ years experience.">
+    <meta name="keywords" content="teleprompter, teleprompter services, teleprompter operator, prompter, presidential teleprompter, live events, corporate video, broadcast">
+    <meta name="geo.region" content="US">
+    <link rel="canonical" href="https://nationalteleprompter.com/">
+    <meta property="og:title" content="National Teleprompter | Professional Teleprompter Network">
+    <meta property="og:description" content="Professional teleprompter services across 5 states. One network, consistent quality, local expertise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nationalteleprompter.com/">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "National Teleprompter",
+        "url": "https://nationalteleprompter.com",
+        "description": "Professional teleprompter services network across America",
+        "telephone": "727-623-2652",
+        "email": "jason@floridateleprompter.com",
+        "areaServed": ["Florida", "Ohio", "Georgia", "Pennsylvania", "New York"],
+        "parentOrganization": {
+            "@type": "Corporation",
+            "name": "Claduta Corp",
+            "url": "https://cladutacorp.com"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Teleprompter Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Live Event Teleprompter"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Corporate Teleprompter"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Production Teleprompter"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Broadcast Teleprompter"}}
+            ]
+        }
+    }
+    </script>
     
     <style>
         :root {
-            --bg-void: #080706;
-            --bg-deep: #0d0b09;
-            --bg-primary: #141210;
-            --bg-elevated: #1c1915;
-            --bg-card: #211e1a;
+            --gold: #F5B84C;
+            --gold-light: #F5D88C;
+            --gold-dark: #D4A03C;
+            --gold-deep: #B8862C;
             
-            --gold: #c9a227;
-            --gold-light: #e8c547;
-            --gold-glow: rgba(201, 162, 39, 0.6);
-            --copper: #b87333;
+            --bg-void: #0A0908;
+            --bg-deep: #0F0D0B;
+            --bg-elevated: #1A1714;
+            --bg-card: #211D18;
             
-            --text-bright: #faf8f5;
-            --text-primary: #e8e4dc;
-            --text-secondary: #a89d8a;
-            --text-muted: #6b6155;
+            --text-bright: #FAF7F2;
+            --text-primary: #E8E2D8;
+            --text-secondary: #A89A88;
+            --text-muted: #6B5D4D;
             
             --success: #5cb85c;
             --success-glow: rgba(92, 184, 92, 0.5);
             
-            --border: rgba(201, 162, 39, 0.08);
-            --border-light: rgba(201, 162, 39, 0.15);
+            --border: rgba(245, 184, 76, 0.1);
+            --border-light: rgba(245, 184, 76, 0.2);
             
-            --font-display: 'Arial Black', 'Helvetica Bold', sans-serif;
+            --spot-core: rgba(245, 220, 160, 0.3);
+            --spot-mid: rgba(245, 184, 76, 0.2);
+            --spot-outer: rgba(245, 216, 140, 0.1);
+            
+            --font-display: Arial, 'Helvetica Neue', sans-serif;
             --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,12 +88,13 @@
 
         h1, h2, h3, h4 {
             font-family: var(--font-display);
-            font-weight: 900;
-            letter-spacing: 0.02em;
+            font-weight: bold;
+            letter-spacing: 0;
             line-height: 1.1;
         }
 
         a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; }
 
         .container {
             max-width: 1200px;
@@ -72,31 +112,13 @@
             top: 0; left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.4s ease;
-        }
-
-        .nav::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(180deg, var(--bg-void) 0%, transparent 100%);
-            transition: all 0.4s ease;
-        }
-
-        .nav.scrolled {
-            padding: 12px 0;
-        }
-
-        .nav.scrolled::before {
-            background: rgba(8, 7, 6, 0.95);
+            padding: 16px 0;
+            background: rgba(10, 9, 8, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav-inner {
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -105,73 +127,63 @@
             padding: 0 40px;
         }
 
-        /* Logo */
-        .logo {
+        .nav-logo {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
+        .nav-logo-icon {
+            width: 38px;
+            height: 38px;
             flex-shrink: 0;
         }
 
-        .logo-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .logo-wordmark {
+        .nav-logo-wordmark {
             display: flex;
             flex-direction: column;
         }
 
-        .logo-name {
+        .nav-logo-name {
             font-family: var(--font-display);
-            font-size: 16px;
-            font-weight: 900;
-            letter-spacing: 0.03em;
+            font-size: 1.35rem;
+            font-weight: bold;
             color: var(--text-bright);
             line-height: 1;
-            text-transform: uppercase;
         }
 
-        .logo-tagline {
-            font-family: var(--font-body);
-            font-size: 7.5px;
-            font-weight: 600;
-            letter-spacing: 0.22em;
+        .nav-logo-tagline {
+            font-size: 0.54rem;
             color: var(--text-muted);
-            margin-top: 3px;
-            line-height: 1;
+            letter-spacing: -0.01em;
             text-transform: uppercase;
+            margin-top: 2px;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 28px;
         }
 
         .nav-links a {
-            font-size: 11px;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
             color: var(--text-secondary);
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover { color: var(--gold); }
 
         .nav-cta {
-            padding: 10px 22px !important;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
+            padding: 10px 20px !important;
+            background: var(--gold);
             color: var(--bg-void) !important;
-            border-radius: 2px;
+            border-radius: 3px;
+            font-weight: 700 !important;
         }
+
+        .nav-cta:hover { background: var(--gold-light); }
 
         .mobile-toggle {
             display: none;
@@ -193,30 +205,28 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100vh;
+            inset: 0;
             background: var(--bg-void);
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 30px;
+            gap: 24px;
             z-index: 999;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s;
         }
 
         .mobile-menu.active { opacity: 1; pointer-events: all; }
-        .mobile-menu a { font-family: var(--font-display); font-size: 28px; color: var(--text-secondary); }
+        .mobile-menu a { font-size: 1.5rem; color: var(--text-secondary); font-weight: bold; }
+        .mobile-menu a:hover { color: var(--gold); }
 
         @media (max-width: 800px) {
             .nav-links { display: none; }
             .mobile-toggle { display: flex; }
             .mobile-menu { display: flex; }
             .nav-inner { padding: 0 20px; }
-            .logo-name { font-size: 14px; }
-            .logo-tagline { font-size: 6.5px; letter-spacing: 0.20em; }
-            .logo-icon { width: 34px; height: 34px; }
+            .nav-logo-name { font-size: 1.1rem; }
         }
 
         /* HERO */
@@ -230,49 +240,98 @@
             overflow: hidden;
         }
 
-        .stage-bg {
+        /* Teleprompter Array Background */
+        .prompter-array {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 0;
-            background: radial-gradient(ellipse 100% 70% at 50% 100%, #1a1510 0%, var(--bg-void) 50%);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            pointer-events: none;
+        }
+
+        .prompter-array svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-line {
+            animation: textScroll 4s ease-in-out infinite;
+        }
+
+        @keyframes textScroll {
+            0%, 100% { opacity: 0.3; transform: translateY(0); }
+            50% { opacity: 0.8; transform: translateY(-3px); }
+        }
+
+        .network-lines line {
+            animation: networkPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes networkPulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.4; }
+        }
+
+        .network-nodes circle {
+            animation: nodeGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes nodeGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
         }
 
         .stage-lights {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
+            inset: 0;
             pointer-events: none;
         }
 
-        .light-beam {
+        .spotlight {
             position: absolute;
-            top: -20%;
-            width: 250px;
-            height: 120%;
-            background: linear-gradient(180deg, rgba(201, 162, 39, 0.12) 0%, transparent 60%);
-            transform-origin: top center;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            filter: blur(20px);
             opacity: 0;
-            filter: blur(40px);
+            animation: spotlightPulse 4s ease-in-out infinite;
         }
 
-        .light-beam-1 { left: 15%; transform: rotate(-12deg); animation: sweep1 10s ease-in-out infinite; }
-        .light-beam-2 { right: 15%; transform: rotate(12deg); animation: sweep2 10s ease-in-out infinite; animation-delay: -5s; }
-
-        @keyframes sweep1 {
-            0%, 100% { opacity: 0; transform: rotate(-20deg); }
-            50% { opacity: 0.7; transform: rotate(5deg); }
+        .spotlight-1 {
+            left: 20%;
+            border-width: 0 60px 400px 60px;
+            border-color: transparent transparent var(--spot-mid) transparent;
+            animation-delay: 0s;
         }
-        @keyframes sweep2 {
-            0%, 100% { opacity: 0; transform: rotate(20deg); }
-            50% { opacity: 0.7; transform: rotate(-5deg); }
+
+        .spotlight-2 {
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 80px 450px 80px;
+            border-color: transparent transparent var(--spot-core) transparent;
+            animation-delay: 0.5s;
+        }
+
+        .spotlight-3 {
+            right: 20%;
+            border-width: 0 60px 400px 60px;
+            border-color: transparent transparent var(--spot-mid) transparent;
+            animation-delay: 1s;
+        }
+
+        @keyframes spotlightPulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
         }
 
         .hero-content {
             position: relative;
             z-index: 10;
-            max-width: 900px;
+            max-width: 800px;
             text-align: center;
         }
 
@@ -280,175 +339,198 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 22px;
-            background: rgba(201, 162, 39, 0.1);
+            padding: 10px 20px;
+            background: rgba(245, 184, 76, 0.1);
             border: 1px solid var(--border-light);
             border-radius: 100px;
-            font-size: 10px;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             color: var(--gold);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         .pulse-dot {
-            width: 6px; height: 6px;
+            width: 8px; height: 8px;
             background: var(--success);
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
         .hero-title {
-            margin-bottom: 24px;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            margin-bottom: 20px;
+            color: var(--text-bright);
         }
 
-        .hero-title .line {
-            display: block;
-            font-size: clamp(36px, 8vw, 80px);
-            line-height: 1;
-            text-transform: uppercase;
-        }
-
-        .line-3 em {
-            font-style: normal;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--copper) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-title .highlight {
+            color: var(--gold);
         }
 
         .hero-subtitle {
-            font-size: 16px;
+            font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 550px;
-            margin: 0 auto 40px;
+            margin: 0 auto 32px;
             line-height: 1.7;
         }
 
         .hero-actions {
             display: flex;
-            gap: 16px;
+            gap: 14px;
             justify-content: center;
-            margin-bottom: 60px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 8px;
             padding: 14px 28px;
-            font-family: var(--font-body);
-            font-size: 12px;
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
             border: none;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
+            background: var(--gold);
             color: var(--bg-void);
-            border-radius: 2px;
         }
 
         .btn-primary:hover {
+            background: var(--gold-light);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px var(--gold-glow);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
             border: 1px solid var(--border-light);
-            border-radius: 2px;
         }
 
         .btn-secondary:hover {
-            background: rgba(201, 162, 39, 0.1);
+            background: rgba(245, 184, 76, 0.1);
             border-color: var(--gold);
             color: var(--gold);
         }
 
-        .btn-full { width: 100%; }
+        .btn-full { width: 100%; justify-content: center; }
 
-        /* CLIENT MARQUEE */
-        .client-marquee {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-        }
-
-        .marquee-row {
-            display: flex;
-            gap: 40px;
-            padding: 10px 0;
-            white-space: nowrap;
-        }
-
-        .marquee-row-1 { animation: scrollLeft 30s linear infinite; }
-        .marquee-row-2 { animation: scrollRight 35s linear infinite; }
-        .marquee-row-3 { animation: scrollLeft 32s linear infinite; }
-
-        @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        @keyframes scrollRight {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-        }
-
-        .client-name {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            flex-shrink: 0;
-        }
-
-        @media (max-width: 768px) {
-            .hero { padding: 110px 20px 60px; }
-            .hero-actions { flex-direction: column; gap: 12px; }
-            .client-name { font-size: 11px; }
-        }
-
-        /* TOOL SECTION */
-        .tool-section {
-            padding: 80px 0;
+        /* SERVICES */
+        .services {
+            padding: 100px 0;
             background: var(--bg-deep);
         }
 
-        .tool-wrapper {
-            max-width: 600px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--text-bright);
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .tool-card {
-            background: var(--bg-elevated);
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-light);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .service-img.crop-bottom {
+            object-position: center top;
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            font-size: 1.1rem;
+            color: var(--text-bright);
+            margin-bottom: 8px;
+        }
+
+        .service-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        /* TOOL */
+        .tool-section {
+            padding: 80px 0;
+        }
+
+        .tool-card {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
             padding: 40px;
-            position: relative;
         }
 
         .tool-card::before {
             content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--copper));
+            display: block;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            margin: -40px -40px 30px;
+            border-radius: 6px 6px 0 0;
         }
 
         .tool-header {
@@ -456,10 +538,10 @@
             margin-bottom: 30px;
         }
 
-        .tool-icon-wrap {
+        .tool-icon {
             width: 60px; height: 60px;
-            margin: 0 auto 20px;
-            background: rgba(201, 162, 39, 0.1);
+            margin: 0 auto 16px;
+            background: rgba(245, 184, 76, 0.1);
             border: 1px solid var(--border-light);
             border-radius: 50%;
             display: flex;
@@ -467,48 +549,46 @@
             justify-content: center;
         }
 
-        .tool-icon-wrap svg {
+        .tool-icon svg {
             width: 28px; height: 28px;
             stroke: var(--gold);
         }
 
         .tool-title {
-            font-size: 22px;
-            margin-bottom: 12px;
+            font-size: 1.4rem;
+            color: var(--text-bright);
+            margin-bottom: 10px;
         }
 
         .tool-desc {
-            font-size: 14px;
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            line-height: 1.6;
         }
 
         .upload-zone {
             border: 2px dashed var(--border-light);
-            border-radius: 4px;
-            padding: 40px 30px;
+            border-radius: 6px;
+            padding: 40px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             position: relative;
-            background: rgba(201, 162, 39, 0.02);
         }
 
-        .upload-zone:hover {
+        .upload-zone:hover, .upload-zone.dragover {
             border-color: var(--gold);
-            background: rgba(201, 162, 39, 0.05);
+            background: rgba(245, 184, 76, 0.05);
         }
 
         .upload-zone input {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            inset: 0;
             opacity: 0;
             cursor: pointer;
         }
 
         .upload-icon {
-            width: 40px; height: 40px;
+            width: 48px; height: 48px;
             margin: 0 auto 16px;
             stroke: var(--text-muted);
         }
@@ -516,33 +596,34 @@
         .upload-zone:hover .upload-icon { stroke: var(--gold); }
 
         .upload-title {
-            font-family: var(--font-display);
-            font-size: 16px;
+            font-weight: 700;
+            font-size: 1rem;
             margin-bottom: 6px;
+            color: var(--text-bright);
         }
 
         .upload-hint {
-            font-size: 12px;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
         .tool-output {
-            margin-top: 24px;
             display: none;
+            margin-top: 20px;
         }
 
         .tool-output.active { display: block; }
 
         .output-preview {
-            font-family: monospace;
-            font-size: 12px;
-            color: var(--text-secondary);
             background: var(--bg-void);
             border: 1px solid var(--border);
             border-radius: 4px;
             padding: 16px;
-            max-height: 150px;
+            max-height: 180px;
             overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
             white-space: pre-wrap;
             margin-bottom: 16px;
         }
@@ -553,168 +634,197 @@
             justify-content: center;
         }
 
-        /* NETWORK SECTION */
-        .network-section {
+        /* COVERAGE */
+        .coverage {
             padding: 100px 0;
+            background: var(--bg-deep);
         }
 
-        .section-header {
-            margin-bottom: 50px;
-        }
-
-        .section-header.center { text-align: center; }
-
-        .section-tag {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.25em;
-            color: var(--gold);
-            margin-bottom: 14px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: clamp(28px, 4vw, 42px);
-            text-transform: uppercase;
-        }
-
-        .section-subtitle {
-            font-size: 15px;
-            color: var(--text-secondary);
-            margin-top: 14px;
-            max-width: 500px;
-            line-height: 1.6;
-        }
-
-        .section-header.center .section-subtitle {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .network-grid {
+        .states-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
         .state-card {
-            background: var(--bg-elevated);
+            background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 4px;
-            padding: 28px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
         }
 
         .state-card:hover {
             transform: translateY(-4px);
-            border-color: var(--border-light);
+            border-color: var(--gold);
         }
 
-        .state-card.active { border-color: rgba(92, 184, 92, 0.3); }
-
-        .state-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .status-indicator {
-            width: 6px; height: 6px;
+        .state-icon {
+            width: 50px; height: 50px;
+            margin: 0 auto 16px;
+            background: rgba(245, 184, 76, 0.1);
             border-radius: 50%;
-            background: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .status-indicator.live {
-            background: var(--success);
-            box-shadow: 0 0 8px var(--success-glow);
+        .state-icon svg {
+            width: 24px; height: 24px;
+            stroke: var(--gold);
         }
 
         .state-card h3 {
-            font-size: 18px;
+            font-size: 1rem;
+            color: var(--text-bright);
             margin-bottom: 6px;
         }
 
-        .state-region {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 12px;
-        }
-
-        .state-desc {
-            font-size: 13px;
+        .state-card p {
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.6;
             margin-bottom: 16px;
         }
 
-        .state-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
-        }
-
-        .state-tags span {
-            padding: 6px 12px;
-            background: var(--bg-deep);
-            border: 1px solid var(--border);
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            border-radius: 2px;
-        }
-
-        .btn-state {
+        .state-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gold);
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 10px 18px;
-            background: rgba(201, 162, 39, 0.08);
-            border: 1px solid var(--border-light);
-            color: var(--gold);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            border-radius: 2px;
-            transition: all 0.3s ease;
         }
 
-        .btn-state:hover {
-            background: var(--gold);
-            color: var(--bg-void);
+        .state-link:hover { text-decoration: underline; }
+
+        /* STATS */
+        .stats {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 700px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        }
+
+        /* GALLERY */
+        .gallery {
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 800px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px; height: 40px;
+            background: var(--bg-card);
+            border: none;
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* CONTACT */
-        .contact-section {
+        .contact {
             padding: 100px 0;
             background: var(--bg-deep);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.3fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 60px;
         }
 
-        .contact-tagline {
-            font-size: 16px;
-            color: var(--gold);
-            margin-bottom: 12px;
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--text-bright);
+            margin-bottom: 16px;
         }
 
-        .contact-intro > p {
+        .contact-info > p {
             color: var(--text-secondary);
-            line-height: 1.7;
             margin-bottom: 30px;
-            font-size: 14px;
+            line-height: 1.7;
         }
 
         .contact-methods {
@@ -728,20 +838,17 @@
             align-items: center;
             gap: 14px;
             padding: 16px;
-            background: var(--bg-elevated);
+            background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 4px;
-            transition: all 0.3s ease;
+            transition: border-color 0.3s;
         }
 
-        .contact-method:hover {
-            border-color: var(--border-light);
-        }
+        .contact-method:hover { border-color: var(--border-light); }
 
         .method-icon {
             width: 40px; height: 40px;
-            background: rgba(201, 162, 39, 0.1);
-            border: 1px solid var(--border-light);
+            background: rgba(245, 184, 76, 0.1);
             border-radius: 4px;
             display: flex;
             align-items: center;
@@ -750,58 +857,58 @@
         }
 
         .method-icon svg {
-            width: 18px; height: 18px;
+            width: 20px; height: 20px;
             stroke: var(--gold);
         }
 
         .contact-method span {
-            font-size: 14px;
+            font-size: 0.95rem;
+            color: var(--text-primary);
         }
 
         .contact-form-card {
-            background: var(--bg-elevated);
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 40px;
+            border-radius: 6px;
+            padding: 36px;
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 14px;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .form-group label {
-            font-size: 10px;
+            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--text-secondary);
         }
 
         .form-group input,
         .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
+            padding: 12px 14px;
             background: var(--bg-deep);
             border: 1px solid var(--border);
             border-radius: 3px;
             color: var(--text-primary);
             font-family: var(--font-body);
-            font-size: 14px;
-            transition: border-color 0.3s ease;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
         }
 
         .form-group input::placeholder,
@@ -820,45 +927,6 @@
             min-height: 100px;
         }
 
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .checkbox-item input { display: none; }
-
-        .checkbox-box {
-            width: 18px; height: 18px;
-            border: 1px solid var(--border-light);
-            background: var(--bg-deep);
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .checkbox-item input:checked + .checkbox-box {
-            background: var(--gold);
-            border-color: var(--gold);
-        }
-
-        .checkbox-item input:checked + .checkbox-box::after {
-            content: '✓';
-            color: var(--bg-void);
-            font-size: 11px;
-            font-weight: bold;
-        }
-
         @media (max-width: 800px) {
             .contact-grid { grid-template-columns: 1fr; gap: 40px; }
             .form-row { grid-template-columns: 1fr; }
@@ -867,7 +935,7 @@
         /* FOOTER */
         .footer {
             padding: 60px 0 30px;
-            background: var(--bg-primary);
+            background: var(--bg-void);
             border-top: 1px solid var(--border);
         }
 
@@ -878,19 +946,20 @@
             margin-bottom: 40px;
         }
 
-        .footer-brand .logo { margin-bottom: 16px; }
+        .footer-brand .nav-logo { margin-bottom: 14px; }
         .footer-brand > p {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            font-size: 13px;
             line-height: 1.6;
         }
 
         .footer h4 {
-            font-size: 11px;
-            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             color: var(--text-secondary);
             margin-bottom: 16px;
-            text-transform: uppercase;
         }
 
         .footer-links {
@@ -900,28 +969,12 @@
         }
 
         .footer-links a {
-            font-size: 13px;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover { color: var(--gold); }
-
-        .link-badge {
-            font-size: 8px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            padding: 3px 8px;
-            background: var(--bg-void);
-            border-radius: 100px;
-            color: var(--text-muted);
-            margin-left: 8px;
-        }
-
-        .link-badge.live {
-            background: rgba(92, 184, 92, 0.15);
-            color: var(--success);
-        }
 
         .footer-bottom {
             padding-top: 30px;
@@ -931,12 +984,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 12px;
-        }
-
-        .footer-bottom p,
-        .footer-bottom a,
-        .footer-bottom span {
-            font-size: 11px;
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
 
@@ -945,13 +993,10 @@
         .footer-corp {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
         }
 
-        .copy-email {
-            cursor: pointer;
-        }
-
+        .copy-email { cursor: pointer; }
         .copy-email:hover { color: var(--gold); }
 
         .copy-toast {
@@ -963,10 +1008,10 @@
             color: var(--bg-void);
             padding: 10px 20px;
             border-radius: 4px;
-            font-size: 13px;
+            font-size: 0.9rem;
             font-weight: 600;
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             z-index: 9999;
         }
 
@@ -978,7 +1023,7 @@
         @media (max-width: 800px) {
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; }
-            .footer-corp { flex-direction: column; gap: 6px; }
+            .footer-corp { flex-direction: column; gap: 8px; }
         }
 
         @media (max-width: 500px) {
@@ -989,27 +1034,27 @@
 <body>
     <nav class="nav">
         <div class="nav-inner">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="46" fill="#c9a227"/>
-                        <rect x="20" y="72" width="60" height="7" rx="2" fill="#141210"/>
-                        <rect x="36" y="64" width="28" height="10" rx="2" fill="#141210"/>
-                        <path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#141210"/>
-                        <rect x="21" y="16" width="58" height="44" rx="3" fill="#211e1a"/>
-                        <path d="M28 32L36 28L44 33L50 24L58 26L66 20L74 24" stroke="#c9a227" stroke-width="2.5" fill="none" opacity="0.7"/>
-                    </svg>
-                </div>
-                <div class="logo-wordmark">
-                    <span class="logo-name">National Teleprompter</span>
-                    <span class="logo-tagline">Powering Outstanding Performances</span>
+            <a href="#" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="46" fill="#F5B84C"/>
+                    <rect x="20" y="72" width="60" height="7" rx="2" fill="#1A1714"/>
+                    <rect x="36" y="64" width="28" height="10" rx="2" fill="#1A1714"/>
+                    <path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#1A1714"/>
+                    <rect x="21" y="16" width="58" height="44" rx="3" fill="#211D18"/>
+                    <path d="M28 32L36 28L44 33L50 24L58 26L66 20L74 24" stroke="#F5B84C" stroke-width="2.5" fill="none" opacity="0.7"/>
+                </svg>
+                <div class="nav-logo-wordmark">
+                    <span class="nav-logo-name">National Teleprompter</span>
+                    <span class="nav-logo-tagline">Powering Outstanding Performances</span>
                 </div>
             </a>
             
             <div class="nav-links">
+                <a href="#services">Services</a>
                 <a href="#tool">Script Formatter</a>
-                <a href="#network">Network</a>
-                <a href="#contact" class="nav-cta">Get a Quote</a>
+                <a href="#coverage">Network</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact" class="nav-cta">Get Quote</a>
             </div>
             
             <button class="mobile-toggle" aria-label="Menu">
@@ -1019,193 +1064,328 @@
     </nav>
 
     <div class="mobile-menu">
+        <a href="#services">Services</a>
         <a href="#tool">Script Formatter</a>
-        <a href="#network">Network</a>
-        <a href="#contact">Get a Quote</a>
+        <a href="#coverage">Network</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Get Quote</a>
     </div>
 
-    <header class="hero">
-        <div class="stage-bg"></div>
+    <section class="hero" id="hero">
+        <div class="prompter-array">
+            <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="stageFloor" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgba(42,33,25,0.9)"/>
+                        <stop offset="100%" style="stop-color:rgba(20,15,10,0.95)"/>
+                    </linearGradient>
+                    <linearGradient id="monitorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgba(50,40,30,0.95)"/>
+                        <stop offset="100%" style="stop-color:rgba(30,24,18,0.98)"/>
+                    </linearGradient>
+                    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgba(15,12,10,0.95)"/>
+                        <stop offset="100%" style="stop-color:rgba(10,8,6,0.98)"/>
+                    </linearGradient>
+                </defs>
+                
+                <rect x="0" y="320" width="1200" height="80" fill="url(#stageFloor)"/>
+                
+                <!-- Center Prompter -->
+                <g class="prompter-center">
+                    <rect x="525" y="140" width="150" height="100" rx="4" fill="url(#monitorGrad)"/>
+                    <rect x="535" y="150" width="130" height="80" rx="2" fill="url(#screenGrad)"/>
+                    <polygon points="525,240 600,290 675,240" fill="rgba(30,24,18,0.8)" opacity="0.8"/>
+                    <line x1="550" y1="170" x2="650" y2="170" stroke="rgba(245,184,76,0.15)" stroke-width="2" class="text-line"/>
+                    <line x1="550" y1="185" x2="630" y2="185" stroke="rgba(245,184,76,0.12)" stroke-width="2" class="text-line"/>
+                    <line x1="550" y1="200" x2="645" y2="200" stroke="rgba(245,184,76,0.15)" stroke-width="2" class="text-line"/>
+                    <line x1="550" y1="215" x2="620" y2="215" stroke="rgba(245,184,76,0.12)" stroke-width="2" class="text-line"/>
+                    <rect x="585" y="290" width="30" height="40" fill="url(#monitorGrad)"/>
+                    <rect x="560" y="330" width="80" height="8" rx="2" fill="url(#monitorGrad)"/>
+                </g>
+                
+                <!-- Left Prompter -->
+                <g class="prompter" opacity="0.6">
+                    <rect x="200" y="180" width="120" height="80" rx="3" fill="url(#monitorGrad)"/>
+                    <rect x="208" y="188" width="104" height="64" rx="2" fill="url(#screenGrad)"/>
+                    <polygon points="200,260 260,300 320,260" fill="rgba(30,24,18,0.7)" opacity="0.7"/>
+                    <rect x="248" y="300" width="24" height="30" fill="url(#monitorGrad)"/>
+                    <rect x="228" y="330" width="64" height="6" rx="2" fill="url(#monitorGrad)"/>
+                </g>
+                
+                <!-- Right Prompter -->
+                <g class="prompter" opacity="0.6">
+                    <rect x="880" y="180" width="120" height="80" rx="3" fill="url(#monitorGrad)"/>
+                    <rect x="888" y="188" width="104" height="64" rx="2" fill="url(#screenGrad)"/>
+                    <polygon points="880,260 940,300 1000,260" fill="rgba(30,24,18,0.7)" opacity="0.7"/>
+                    <rect x="928" y="300" width="24" height="30" fill="url(#monitorGrad)"/>
+                    <rect x="908" y="330" width="64" height="6" rx="2" fill="url(#monitorGrad)"/>
+                </g>
+                
+                <!-- Network Lines -->
+                <g class="network-lines" opacity="0.2">
+                    <line x1="320" y1="220" x2="525" y2="190" stroke="rgba(245,184,76,0.4)" stroke-width="1" stroke-dasharray="5 5"/>
+                    <line x1="675" y1="190" x2="880" y2="220" stroke="rgba(245,184,76,0.4)" stroke-width="1" stroke-dasharray="5 5"/>
+                </g>
+                
+                <g class="network-nodes">
+                    <circle cx="320" cy="220" r="4" fill="rgba(245,184,76,0.4)"/>
+                    <circle cx="525" cy="190" r="4" fill="rgba(245,184,76,0.5)"/>
+                    <circle cx="675" cy="190" r="4" fill="rgba(245,184,76,0.5)"/>
+                    <circle cx="880" cy="220" r="4" fill="rgba(245,184,76,0.4)"/>
+                </g>
+            </svg>
+        </div>
+        
         <div class="stage-lights">
-            <div class="light-beam light-beam-1"></div>
-            <div class="light-beam light-beam-2"></div>
+            <div class="spotlight spotlight-1"></div>
+            <div class="spotlight spotlight-2"></div>
+            <div class="spotlight spotlight-3"></div>
         </div>
 
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="pulse-dot"></span>
-                NETWORK ACTIVE
+                5 STATES ACTIVE
             </div>
             
-            <h1 class="hero-title">
-                <span class="line">One Network</span>
-                <span class="line">Every Stage</span>
-                <span class="line line-3"><em>Nationwide</em></span>
-            </h1>
+            <h1 class="hero-title">One Network.<br><span class="highlight">Nationwide.</span></h1>
             
-            <p class="hero-subtitle">
-                Professional teleprompter operators with consistent standards and seamless coordination across multiple states.
-            </p>
+            <p class="hero-subtitle">Professional teleprompter operators with consistent standards and seamless coordination across Florida, Ohio, Georgia, Pennsylvania, and New York.</p>
             
             <div class="hero-actions">
                 <a href="#tool" class="btn btn-primary">Try Script Formatter</a>
                 <a href="#contact" class="btn btn-secondary">Request Quote</a>
             </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Professional teleprompter services for every production type</p>
+            </div>
             
-            <div class="client-marquee">
-                <div class="marquee-row marquee-row-1">
-                    <span class="client-name">Tony Dungy</span>
-                    <span class="client-name">Tim Tebow</span>
-                    <span class="client-name">Disney</span>
-                    <span class="client-name">John Travolta</span>
-                    <span class="client-name">Shaquille O'Neal</span>
-                    <span class="client-name">AmeriLife</span>
-                    <span class="client-name">Tampa Bay Buccaneers</span>
-                    <span class="client-name">Tony Dungy</span>
-                    <span class="client-name">Tim Tebow</span>
-                    <span class="client-name">Disney</span>
-                    <span class="client-name">John Travolta</span>
-                    <span class="client-name">Shaquille O'Neal</span>
-                    <span class="client-name">AmeriLife</span>
-                    <span class="client-name">Tampa Bay Buccaneers</span>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="img-stage.jpg" alt="Live event teleprompter" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3>Live Events</h3>
+                        <p>Keynotes, conferences, award shows, and ceremonies with experienced operators.</p>
+                    </div>
                 </div>
-                <div class="marquee-row marquee-row-2">
-                    <span class="client-name">Morton Plant Hospital</span>
-                    <span class="client-name">Toronto Blue Jays</span>
-                    <span class="client-name">Jose Bautista</span>
-                    <span class="client-name">John Cena</span>
-                    <span class="client-name">NASCAR</span>
-                    <span class="client-name">Ford</span>
-                    <span class="client-name">Morton Plant Hospital</span>
-                    <span class="client-name">Toronto Blue Jays</span>
-                    <span class="client-name">Jose Bautista</span>
-                    <span class="client-name">John Cena</span>
-                    <span class="client-name">NASCAR</span>
-                    <span class="client-name">Ford</span>
+                
+                <div class="service-card">
+                    <img src="img-gala.jpg" alt="Corporate teleprompter" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3>Corporate</h3>
+                        <p>Town halls, earnings calls, executive communications, and training videos.</p>
+                    </div>
                 </div>
-                <div class="marquee-row marquee-row-1">
-                    <span class="client-name">Liza Minnelli</span>
-                    <span class="client-name">Diana Ross</span>
-                    <span class="client-name">NHL All-Star Game</span>
-                    <span class="client-name">Publix</span>
-                    <span class="client-name">Home Depot</span>
-                    <span class="client-name">Mindvalley</span>
-                    <span class="client-name">Liza Minnelli</span>
-                    <span class="client-name">Diana Ross</span>
-                    <span class="client-name">NHL All-Star Game</span>
-                    <span class="client-name">Publix</span>
-                    <span class="client-name">Home Depot</span>
-                    <span class="client-name">Mindvalley</span>
+                
+                <div class="service-card">
+                    <img src="img-montel.jpg" alt="Video production teleprompter" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3>Video Production</h3>
+                        <p>Commercials, documentaries, YouTube, and streaming content.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="img-rig.jpg" alt="Broadcast teleprompter" class="service-img crop-bottom" loading="lazy">
+                    <div class="service-content">
+                        <h3>Broadcast</h3>
+                        <p>News, talk shows, and studio productions with broadcast-grade equipment.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="img-ballroom.jpg" alt="Sports entertainment teleprompter" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3>Sports & Entertainment</h3>
+                        <p>Halftime shows, press conferences, and entertainment productions.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="img-outdoor.jpg" alt="Political teleprompter" class="service-img" loading="lazy">
+                    <div class="service-content">
+                        <h3>Political & Non-Profit</h3>
+                        <p>Press conferences, speeches, rallies, and public addresses.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section id="tool" class="tool-section">
+    <section class="tool-section" id="tool">
         <div class="container">
-            <div class="tool-wrapper">
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <div class="tool-icon-wrap">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                            </svg>
-                        </div>
-                        <h2 class="tool-title">Script Formatter</h2>
-                        <p class="tool-desc">Submit your script pre-formatted for our teleprompter operators. Upload a TXT file and we'll add proper line breaks after each sentence—ready for smooth, professional delivery on show day.</p>
-                    </div>
-                    
-                    <div class="upload-zone" id="uploadZone">
-                        <input type="file" id="scriptFile" accept=".txt">
-                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="17 8 12 3 7 8"/>
-                            <line x1="12" y1="3" x2="12" y2="15"/>
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
                         </svg>
-                        <p class="upload-title">Drop Script Here</p>
-                        <p class="upload-hint">TXT files only</p>
                     </div>
-                    
-                    <div class="tool-output" id="toolOutput">
-                        <div class="output-preview" id="outputPreview"></div>
-                        <div class="tool-actions">
-                            <button class="btn btn-primary" id="downloadBtn">Download RTF</button>
-                            <button class="btn btn-secondary" id="resetBtn">Format Another</button>
-                        </div>
+                    <h2 class="tool-title">Script Formatter</h2>
+                    <p class="tool-desc">Upload your script (TXT or DOCX) and download a teleprompter-ready RTF file with proper line breaks after each sentence.</p>
+                </div>
+                
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="scriptFile" accept=".txt,.docx">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <p class="upload-title">Drop Script Here</p>
+                    <p class="upload-hint">TXT or DOCX files</p>
+                </div>
+                
+                <div class="tool-output" id="toolOutput">
+                    <div class="output-preview" id="outputPreview"></div>
+                    <div class="tool-actions">
+                        <button class="btn btn-primary" id="downloadBtn">Download RTF</button>
+                        <button class="btn btn-secondary" id="resetBtn">Format Another</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="network" class="network-section">
+    <section class="coverage" id="coverage">
         <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">The Network</span>
-                <h2 class="section-title">National Teleprompter Network</h2>
-                <p class="section-subtitle">Local expertise meets national reach. One seamless experience across every market.</p>
+            <div class="section-header">
+                <span class="section-tag">Our Network</span>
+                <h2 class="section-title">5 States. One Standard.</h2>
+                <p class="section-subtitle">Local expertise with national reach</p>
             </div>
             
-            <div class="network-grid">
-                <div class="state-card active">
-                    <div class="state-status"><span class="status-indicator live"></span>ACTIVE</div>
-                    <h3>Florida Teleprompter</h3>
-                    <p class="state-region">Tampa Bay • Miami • Orlando • Jacksonville</p>
-                    <p class="state-desc">Our flagship operation. 25+ years serving the Southeast.</p>
-                    <div class="state-tags"><span>Live Events</span><span>Video</span><span>Corporate</span></div>
-                    <a href="https://floridateleprompter.com" class="btn-state" target="_blank">Visit Site →</a>
-                </div>
+            <div class="states-grid">
+                <a href="https://floridateleprompter.com" target="_blank" class="state-card">
+                    <div class="state-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/></svg>
+                    </div>
+                    <h3>Florida</h3>
+                    <p>Tampa • Miami • Orlando • Jacksonville</p>
+                    <span class="state-link">Visit Site →</span>
+                </a>
                 
-                <div class="state-card active">
-                    <div class="state-status"><span class="status-indicator live"></span>ACTIVE</div>
-                    <h3>Ohio Teleprompter</h3>
-                    <p class="state-region">Columbus • Cleveland • Cincinnati</p>
-                    <p class="state-desc">Serving the Midwest corporate and event markets.</p>
-                    <div class="state-tags"><span>Live Events</span><span>Video</span><span>Corporate</span></div>
-                    <a href="https://ohioteleprompter.com" class="btn-state" target="_blank">Visit Site →</a>
-                </div>
+                <a href="https://ohioteleprompter.com" target="_blank" class="state-card">
+                    <div class="state-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/></svg>
+                    </div>
+                    <h3>Ohio</h3>
+                    <p>Columbus • Cleveland • Cincinnati</p>
+                    <span class="state-link">Visit Site →</span>
+                </a>
                 
-                <div class="state-card active">
-                    <div class="state-status"><span class="status-indicator live"></span>ACTIVE</div>
-                    <h3>Georgia Teleprompter</h3>
-                    <p class="state-region">Atlanta • Savannah • Augusta</p>
-                    <p class="state-desc">Serving Georgia's film and production industry.</p>
-                    <div class="state-tags"><span>Live Events</span><span>Video</span><span>Corporate</span></div>
-                    <a href="https://georgiateleprompter.com" class="btn-state" target="_blank">Visit Site →</a>
-                </div>
+                <a href="https://georgiateleprompter.com" target="_blank" class="state-card">
+                    <div class="state-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/></svg>
+                    </div>
+                    <h3>Georgia</h3>
+                    <p>Atlanta • Savannah • Augusta</p>
+                    <span class="state-link">Visit Site →</span>
+                </a>
                 
-                <div class="state-card active">
-                    <div class="state-status"><span class="status-indicator live"></span>ACTIVE</div>
-                    <h3>Pennsylvania Teleprompter</h3>
-                    <p class="state-region">Philadelphia • Pittsburgh</p>
-                    <p class="state-desc">Northeast coverage for corporate and studios.</p>
-                    <div class="state-tags"><span>Live Events</span><span>Video</span><span>Corporate</span></div>
-                    <a href="https://pennsylvaniateleprompter.com" class="btn-state" target="_blank">Visit Site →</a>
-                </div>
+                <a href="https://pennsylvaniateleprompter.com" target="_blank" class="state-card">
+                    <div class="state-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/></svg>
+                    </div>
+                    <h3>Pennsylvania</h3>
+                    <p>Philadelphia • Pittsburgh • Harrisburg</p>
+                    <span class="state-link">Visit Site →</span>
+                </a>
                 
-                <div class="state-card active">
-                    <div class="state-status"><span class="status-indicator live"></span>ACTIVE</div>
-                    <h3>New York Teleprompter</h3>
-                    <p class="state-region">New York City • Buffalo • Albany</p>
-                    <p class="state-desc">Premium market coverage for media capital.</p>
-                    <div class="state-tags"><span>Broadcast</span><span>Corporate</span><span>Events</span></div>
-                    <a href="https://newyorkteleprompter.com" class="btn-state" target="_blank">Visit Site →</a>
+                <a href="https://newyorkteleprompter.com" target="_blank" class="state-card">
+                    <div class="state-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/></svg>
+                    </div>
+                    <h3>New York</h3>
+                    <p>NYC • Buffalo • Albany</p>
+                    <span class="state-link">Visit Site →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-value">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">State Network</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">1000s</div>
+                    <div class="stat-label">Shows Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Professional Ops</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h2 class="section-title">In the Field</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('img-stage.jpg')">
+                    <img src="img-stage.jpg" alt="Live event setup" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-gala.jpg')">
+                    <img src="img-gala.jpg" alt="Corporate gala" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-rig.jpg')">
+                    <img src="img-rig.jpg" alt="Camera rig" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-montel.jpg')">
+                    <img src="img-montel.jpg" alt="Video production" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-ballroom.jpg')">
+                    <img src="img-ballroom.jpg" alt="Ballroom setup" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-outdoor.jpg')">
+                    <img src="img-outdoor.jpg" alt="Outdoor shoot" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-prompter.jpg')">
+                    <img src="img-prompter.jpg" alt="Teleprompter close-up" loading="lazy">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('img-station.jpg')">
+                    <img src="img-station.jpg" alt="Operator station" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="Gallery image" id="lightboxImg">
+    </div>
+
+    <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-intro">
-                    <span class="section-tag">Book Now</span>
-                    <h2 class="section-title">Get a Quote</h2>
-                    <p class="contact-tagline">One form. Any state.</p>
-                    <p>Whether you need coverage in one city or across multiple states, we'll connect you with the right team.</p>
+                <div class="contact-info">
+                    <span class="section-tag">Get Started</span>
+                    <h2>Request a Quote</h2>
+                    <p>One form for any state in the network. We'll connect you with the right team for your production.</p>
                     
                     <div class="contact-methods">
                         <a href="mailto:jason@floridateleprompter.com" class="contact-method">
@@ -1239,20 +1419,10 @@
                             <div class="form-group"><label>Phone</label><input type="tel" name="phone"></div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group"><label>Event City</label><input type="text" name="city" placeholder="e.g. Miami, Atlanta"></div>
+                            <div class="form-group"><label>Event City</label><input type="text" name="city" placeholder="e.g. Miami, Atlanta, NYC"></div>
                             <div class="form-group"><label>Event Date</label><input type="date" name="event_date"></div>
                         </div>
-                        <div class="form-group">
-                            <label>States Needed</label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-item"><input type="checkbox" name="states" value="florida"><span class="checkbox-box"></span>Florida</label>
-                                <label class="checkbox-item"><input type="checkbox" name="states" value="ohio"><span class="checkbox-box"></span>Ohio</label>
-                                <label class="checkbox-item"><input type="checkbox" name="states" value="georgia"><span class="checkbox-box"></span>Georgia</label>
-                                <label class="checkbox-item"><input type="checkbox" name="states" value="pennsylvania"><span class="checkbox-box"></span>Pennsylvania</label>
-                                <label class="checkbox-item"><input type="checkbox" name="states" value="newyork"><span class="checkbox-box"></span>New York</label>
-                            </div>
-                        </div>
-                        <div class="form-group"><label>Details</label><textarea name="details" placeholder="Tell us about your production..."></textarea></div>
+                        <div class="form-group"><label>Project Details</label><textarea name="details" placeholder="Tell us about your production..."></textarea></div>
                         <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
                     </form>
                 </div>
@@ -1264,30 +1434,33 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" fill="#c9a227"/><rect x="20" y="72" width="60" height="7" rx="2" fill="#141210"/><rect x="36" y="64" width="28" height="10" rx="2" fill="#141210"/><path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#141210"/><rect x="21" y="16" width="58" height="44" rx="3" fill="#211e1a"/></svg>
-                        </div>
-                        <div class="logo-wordmark">
-                            <span class="logo-name">National Teleprompter</span>
-                            <span class="logo-tagline">Powering Outstanding Performances</span>
+                    <a href="#" class="nav-logo">
+                        <svg class="nav-logo-icon" viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="46" fill="#F5B84C"/>
+                            <rect x="20" y="72" width="60" height="7" rx="2" fill="#1A1714"/>
+                            <path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#1A1714"/>
+                            <rect x="21" y="16" width="58" height="44" rx="3" fill="#211D18"/>
+                        </svg>
+                        <div class="nav-logo-wordmark">
+                            <span class="nav-logo-name">National Teleprompter</span>
+                            <span class="nav-logo-tagline">Powering Outstanding Performances</span>
                         </div>
                     </a>
                     <p>Professional teleprompting with local expertise and national reach.</p>
                 </div>
                 
-                <div class="footer-nav">
+                <div>
                     <h4>Network</h4>
                     <div class="footer-links">
-                        <a href="https://floridateleprompter.com" target="_blank">Florida<span class="link-badge live">Active</span></a>
-                        <a href="https://ohioteleprompter.com" target="_blank">Ohio<span class="link-badge live">Active</span></a>
-                        <a href="https://georgiateleprompter.com" target="_blank">Georgia<span class="link-badge live">Active</span></a>
-                        <a href="https://pennsylvaniateleprompter.com" target="_blank">Pennsylvania<span class="link-badge live">Active</span></a>
-                        <a href="https://newyorkteleprompter.com" target="_blank">New York<span class="link-badge live">Active</span></a>
+                        <a href="https://floridateleprompter.com" target="_blank">Florida</a>
+                        <a href="https://ohioteleprompter.com" target="_blank">Ohio</a>
+                        <a href="https://georgiateleprompter.com" target="_blank">Georgia</a>
+                        <a href="https://pennsylvaniateleprompter.com" target="_blank">Pennsylvania</a>
+                        <a href="https://newyorkteleprompter.com" target="_blank">New York</a>
                     </div>
                 </div>
                 
-                <div class="footer-nav">
+                <div>
                     <h4>Company</h4>
                     <div class="footer-links">
                         <a href="about.html">About Us</a>
@@ -1296,7 +1469,7 @@
                     </div>
                 </div>
                 
-                <div class="footer-nav">
+                <div>
                     <h4>Contact</h4>
                     <div class="footer-links">
                         <a href="mailto:jason@floridateleprompter.com">jason@floridateleprompter.com</a>
@@ -1306,7 +1479,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 National Teleprompter. All Rights Reserved.</p>
+                <p>&copy; 2025 National Teleprompter. All Rights Reserved.</p>
                 <div class="footer-corp">
                     <span>A subsidiary of <a href="https://cladutacorp.com" target="_blank">Claduta Corp</a></span>
                     <span class="copy-email" onclick="copyEmail()" title="Click to copy">info@cladutacorp.com</span>
@@ -1318,9 +1491,7 @@
     <div class="copy-toast" id="copyToast">Email copied to clipboard</div>
 
     <script>
-        const nav = document.querySelector('.nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
-
+        // Mobile menu
         const mobileToggle = document.querySelector('.mobile-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
         mobileToggle?.addEventListener('click', () => {
@@ -1332,14 +1503,16 @@
             document.body.style.overflow = '';
         }));
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', function(e) {
                 e.preventDefault();
                 const t = document.querySelector(this.getAttribute('href'));
-                if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+                if (t) window.scrollTo({ top: t.offsetTop - 70, behavior: 'smooth' });
             });
         });
 
+        // Copy email
         function copyEmail() {
             navigator.clipboard.writeText('info@cladutacorp.com').then(() => {
                 const toast = document.getElementById('copyToast');
@@ -1348,32 +1521,71 @@
             });
         }
 
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Script formatter
         const uploadZone = document.getElementById('uploadZone');
         const scriptFile = document.getElementById('scriptFile');
         const toolOutput = document.getElementById('toolOutput');
         const outputPreview = document.getElementById('outputPreview');
         let formattedText = '';
 
-        uploadZone?.addEventListener('dragover', e => { e.preventDefault(); });
-        uploadZone?.addEventListener('drop', e => { e.preventDefault(); e.dataTransfer.files[0] && processFile(e.dataTransfer.files[0]); });
+        uploadZone?.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+        uploadZone?.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+        uploadZone?.addEventListener('drop', e => { e.preventDefault(); uploadZone.classList.remove('dragover'); e.dataTransfer.files[0] && processFile(e.dataTransfer.files[0]); });
         scriptFile?.addEventListener('change', e => e.target.files[0] && processFile(e.target.files[0]));
 
         function processFile(file) {
-            const reader = new FileReader();
-            reader.onload = e => {
-                formattedText = e.target.result
-                    .replace(/\. /g, '.\n\n').replace(/\? /g, '?\n\n').replace(/\! /g, '!\n\n')
-                    .replace(/Mr\.\n\n/g, 'Mr. ').replace(/Mrs\.\n\n/g, 'Mrs. ').replace(/Dr\.\n\n/g, 'Dr. ')
-                    .trim();
-                outputPreview.textContent = formattedText;
-                toolOutput.classList.add('active');
-                uploadZone.style.display = 'none';
-            };
-            reader.readAsText(file);
+            const ext = file.name.split('.').pop().toLowerCase();
+            
+            if (ext === 'docx') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    mammoth.extractRawText({arrayBuffer: e.target.result})
+                        .then(result => {
+                            formattedText = formatScript(result.value);
+                            showOutput();
+                        })
+                        .catch(err => alert('Error reading DOCX: ' + err));
+                };
+                reader.readAsArrayBuffer(file);
+            } else {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    formattedText = formatScript(e.target.result);
+                    showOutput();
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        function formatScript(text) {
+            return text
+                .replace(/\. /g, '.\n\n').replace(/\? /g, '?\n\n').replace(/\! /g, '!\n\n')
+                .replace(/Mr\.\n\n/g, 'Mr. ').replace(/Mrs\.\n\n/g, 'Mrs. ').replace(/Ms\.\n\n/g, 'Ms. ')
+                .replace(/Dr\.\n\n/g, 'Dr. ').replace(/Jr\.\n\n/g, 'Jr. ').replace(/Sr\.\n\n/g, 'Sr. ')
+                .replace(/U\.S\.\n\n/g, 'U.S. ').replace(/a\.m\.\n\n/g, 'a.m. ').replace(/p\.m\.\n\n/g, 'p.m. ')
+                .trim();
+        }
+
+        function showOutput() {
+            outputPreview.textContent = formattedText;
+            toolOutput.classList.add('active');
+            uploadZone.style.display = 'none';
         }
 
         document.getElementById('downloadBtn')?.addEventListener('click', () => {
-            const rtf = '{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0 Arial;}}\\f0\\fs40 ' + formattedText.replace(/\\/g,'\\\\').replace(/\{/g,'\\{').replace(/\}/g,'\\}').replace(/\n/g,'\\par\\par ') + '}';
+            const rtf = '{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0 Arial;}}\\f0\\fs48 ' + 
+                formattedText.replace(/\\/g,'\\\\').replace(/\{/g,'\\{').replace(/\}/g,'\\}').replace(/\n/g,'\\par\\par ') + '}';
             const a = document.createElement('a');
             a.href = URL.createObjectURL(new Blob([rtf], {type:'application/rtf'}));
             a.download = 'teleprompter-script.rtf';
