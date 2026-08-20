@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Religious & Spiritual Event Teleprompter Services"
+description: "Church services, religious conferences, spiritual events — religious and spiritual organizations often use teleprompters for sermons and teachings."
+---
 # Religious & Spiritual Event Teleprompter Services
 
 ## Professional Speaking Support for Religious Organizations

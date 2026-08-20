@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Manufacturing & Industrial Sector Teleprompter Services"
+description: "Manufacturing companies, industrial sectors, B2B industries — manufacturing and industrial events require professional, technical communication..."
+---
 # Manufacturing & Industrial Sector Teleprompter Services
 
 ## Professional Support for Manufacturing, Industrial & B2B Events

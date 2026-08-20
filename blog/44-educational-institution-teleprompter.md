@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Educational Institution & University Teleprompter Services"
+description: "University commencements, academic presentations, educational conferences — educational institutions regularly use teleprompter support."
+---
 # Educational Institution & University Teleprompter Services
 
 ## Professional Speaking Support for Schools, Colleges & Universities

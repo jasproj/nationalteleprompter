@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Nonprofit Gala & Fundraising Event Teleprompter Services"
+description: "Nonprofit galas, fundraising events, donor appreciation events — compelling presentations are critical for fundraising success."
+---
 # Nonprofit Gala & Fundraising Event Teleprompter Services
 
 ## Professional Speaking Support for Fundraising Events

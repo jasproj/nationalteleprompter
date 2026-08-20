@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Government & Institutional Teleprompter Services"
+description: "Government agencies, public officials, institutional communications — government events require professional, secure teleprompter infrastructure."
+---
 # Government & Institutional Teleprompter Services
 
 ## Professional Support for Government & Official Communications

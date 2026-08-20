@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Webinar & Virtual Event Teleprompter Services"
+description: "Webinars, virtual conferences, online summits — professional teleprompter support ensures confident, polished delivery for online audiences."
+---
 # Webinar & Virtual Event Teleprompter Services
 
 ## Professional Support for Online Events & Virtual Presentations

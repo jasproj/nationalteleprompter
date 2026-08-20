@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | National Teleprompter</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <link rel="canonical" href="https://nationalteleprompter.com{{ page.url }}">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDK620VM5B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WDK620VM5B');
+    </script>
+
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+             line-height:1.7;color:#1a1a1a;background:#fff}
+        .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+        header{background:#12263f;padding:18px 0}
+        header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem}
+        header nav a{font-weight:400;font-size:.95rem;margin-left:18px;opacity:.85}
+        main{padding:36px 0 56px}
+        h1{font-size:2rem;line-height:1.25;margin:0 0 1rem}
+        h2{font-size:1.4rem;margin:2rem 0 .75rem}
+        h3{font-size:1.15rem;margin:1.5rem 0 .5rem}
+        p,li{font-size:1.02rem}
+        img{max-width:100%;height:auto}
+        table{width:100%;border-collapse:collapse;margin:1.25rem 0;display:block;overflow-x:auto}
+        th,td{border:1px solid #d8dee6;padding:8px 10px;text-align:left}
+        hr{border:0;border-top:1px solid #e3e8ee;margin:2rem 0}
+        a{color:#0b5cab}
+        footer{border-top:1px solid #e3e8ee;padding:24px 0 40px;font-size:.9rem;color:#5a6572}
+        @media (max-width:600px){h1{font-size:1.6rem}header nav a{margin-left:10px}}
+    </style>
+</head>
+<body>
+    <header><div class="wrap">
+        <a href="/">National Teleprompter</a>
+        <nav style="display:inline"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/about.html">About</a></nav>
+    </div></header>
+    <main><div class="wrap">
+{{ content }}
+    </div></main>
+    <footer><div class="wrap">&copy; 2026 National Teleprompter &middot; <a href="/">nationalteleprompter.com</a></div></footer>
+</body>
+</html>
