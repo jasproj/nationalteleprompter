@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Legal & Professional Services Teleprompter Support"
+description: "Law firms, accounting firms, consulting companies, professional services firms — professional events require precision and credibility."
+---
 # Legal & Professional Services Teleprompter Support
 
 ## Professional Speaking for Law Firms, Accounting & Professional Services

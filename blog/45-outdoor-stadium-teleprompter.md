@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Outdoor & Stadium Event Teleprompter Services"
+description: "Outdoor festivals, stadium events, large conventions, major public events — outdoor and stadium productions require specialized teleprompter equipment..."
+---
 # Outdoor & Stadium Event Teleprompter Services
 
 ## Professional Support for Large-Scale Outdoor & Stadium Events

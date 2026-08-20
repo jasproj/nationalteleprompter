@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Wedding & Ceremony Teleprompter Services"
+description: "Weddings, funerals, ceremonies, vow renewals — special events often feature emotional speeches and readings requiring teleprompter support."
+---
 # Wedding & Ceremony Teleprompter Services
 
 ## Professional Speaking Support for Special Events
