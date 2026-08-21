@@ -18,152 +18,183 @@
     <link rel="canonical" href="https://nationalteleprompter.com/about.html">
     <style>
         :root {
-            --gold: #F5B84C;
-            --gold-light: #F5D88C;
-            --bg-void: #0A0908;
-            --bg-deep: #0F0D0B;
-            --bg-elevated: #1A1714;
-            --bg-card: #211D18;
-            --text-bright: #FAF7F2;
-            --text-primary: #E8E2D8;
-            --text-secondary: #A89A88;
-            --text-muted: #6B5D4D;
-            --border: rgba(245, 184, 76, 0.1);
-            --border-light: rgba(245, 184, 76, 0.2);
-            --font-display: Arial, 'Helvetica Neue', sans-serif;
-            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --gold:#00E5FD;
+            --gold-light:#F5D88C;
+            --bg-void:#0A0908;
+            --bg-deep:#0F0D0B;
+            --bg-elevated:#1A1714;
+            --bg-card:#211D18;
+            --text-bright:#FAF7F2;
+            --text-primary:#E8E2D8;
+            --text-secondary:#A89A88;
+            --text-muted:#6B5D4D;
+            --border:rgba(255,255,255,.08);
+            --border-light:rgba(255,255,255,.08);
+            --font-display:Arial, 'Helvetica Neue', sans-serif;
+            --font-body:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         body {
-            font-family: var(--font-body);
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: var(--bg-void);
+            font-family:var(--font-body);
+            font-size:15px;
+            line-height:1.7;
+            color:var(--text-primary);
+            background:var(--bg-void);
         }
-        a { color: var(--gold); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        a { color:var(--gold); text-decoration:none; }
+        a:hover { text-decoration:underline; }
         .nav {
-            padding: 16px 40px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(10, 9, 8, 0.95);
+            padding:16px 40px;
+            border-bottom:1px solid var(--border);
+            display:flex;
+            align-items:center;
+            gap:12px;
+            background:rgba(10, 9, 8, 0.95);
         }
-        .nav-logo { display: flex; align-items: center; gap: 10px; }
-        .nav-logo-icon { width: 36px; height: 36px; }
+        .nav-logo { display:flex; align-items:center; gap:10px; }
+        .nav-logo-icon { width:36px; height:36px; }
         .nav-logo-name {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-bright);
+            font-family:var(--font-display);
+            font-size:1.2rem;
+            font-weight:bold;
+            color:var(--text-bright);
         }
         .hero {
-            padding: 80px 40px;
-            text-align: center;
-            background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-void) 100%);
-            border-bottom: 1px solid var(--border);
+            padding:80px 40px;
+            text-align:center;
+            background:linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-void) 100%);
+            border-bottom:1px solid var(--border);
         }
         .hero h1 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--text-bright);
-            margin-bottom: 16px;
+            font-family:var(--font-display);
+            font-size:2.5rem;
+            color:var(--text-bright);
+            margin-bottom:16px;
         }
         .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
+            font-size:1.1rem;
+            color:var(--text-secondary);
+            max-width:600px;
+            margin:0 auto;
         }
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 40px;
+            max-width:900px;
+            margin:0 auto;
+            padding:60px 40px;
         }
-        .section { margin-bottom: 50px; }
+        .section { margin-bottom:50px; }
         h2 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-            color: var(--text-bright);
+            font-family:var(--font-display);
+            font-size:1.5rem;
+            margin-bottom:16px;
+            color:var(--text-bright);
         }
         h3 {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            margin: 20px 0 10px;
-            color: var(--gold);
+            font-family:var(--font-display);
+            font-size:1rem;
+            margin:20px 0 10px;
+            color:var(--gold);
         }
-        p { margin-bottom: 14px; color: var(--text-secondary); }
-        ul { margin: 0 0 14px 24px; color: var(--text-secondary); }
-        li { margin-bottom: 6px; }
+        p { margin-bottom:14px; color:var(--text-secondary); }
+        ul { margin:0 0 14px 24px; color:var(--text-secondary); }
+        li { margin-bottom:6px; }
         .structure-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 24px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+            gap:16px;
+            margin-top:24px;
         }
         .structure-card {
-            background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 20px;
-            text-align: center;
+            background:var(--bg-elevated);
+            border:1px solid var(--border);
+            border-radius:4px;
+            padding:20px;
+            text-align:center;
         }
         .structure-card.parent {
-            grid-column: 1 / -1;
-            border-color: var(--gold);
+            grid-column:1 / -1;
+            border-color:var(--gold);
         }
         .structure-card h4 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--text-bright);
-            margin-bottom: 6px;
+            font-family:var(--font-display);
+            font-size:0.95rem;
+            color:var(--text-bright);
+            margin-bottom:6px;
         }
-        .structure-card p { font-size: 0.85rem; margin: 0; }
+        .structure-card p { font-size:0.85rem; margin:0; }
         .structure-card .status {
-            display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            padding: 4px 10px;
-            border-radius: 100px;
-            margin-top: 10px;
-            background: rgba(92,184,92,0.15);
-            color: #5cb85c;
+            display:inline-block;
+            font-size:0.65rem;
+            font-weight:700;
+            letter-spacing:0.08em;
+            padding:4px 10px;
+            border-radius:100px;
+            margin-top:10px;
+            background:rgba(92,184,92,0.15);
+            color:#5cb85c;
         }
         .highlight-box {
-            background: var(--bg-elevated);
-            border-left: 3px solid var(--gold);
-            padding: 20px;
-            margin: 24px 0;
+            background:var(--bg-elevated);
+            border-left:3px solid var(--gold);
+            padding:20px;
+            margin:24px 0;
         }
-        .highlight-box p { margin: 0; }
+        .highlight-box p { margin:0; }
         .footer {
-            padding: 30px 40px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            padding:30px 40px;
+            border-top:1px solid var(--border);
+            text-align:center;
+            font-size:0.8rem;
+            color:var(--text-muted);
         }
-        @media (max-width: 600px) {
-            .nav, .hero, .container, .footer { padding-left: 20px; padding-right: 20px; }
-            .hero h1 { font-size: 2rem; }
+        @media (max-width:600px) {
+            .nav, .hero, .container, .footer { padding-left:20px; padding-right:20px; }
+            .hero h1 { font-size:2rem; }
         }
     </style>
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#0B0D10">
+<style id="ntn-brand">
+:root{
+--accent:#00E5FD;--accent-dim:#00B9CC;--accent-ink:#04202A;
+--steel:#F2F4F7;--steel-light:rgba(242,244,247,.64);--gunmetal:rgba(242,244,247,.42);--text-bright:#F2F4F7;
+--gold:#00E5FD;--gold-light:#7CF1FF;--gold-dark:#00E5FD;
+--bg-main:#0B0D10;--bg-void:#0B0D10;--bg-dark:#0B0D10;--dark:#0B0D10;--darker:#07090B;
+--bg-section:#12161B;--bg-card:#12161B;--bg-elevated:#171C22;--bg-deep:#07090B;
+--bg-card-hover:#171C22;--bg-glass:rgba(255,255,255,.03);
+--text-primary:#F2F4F7;--text:#F2F4F7;--text-secondary:rgba(242,244,247,.64);
+--text-muted:rgba(242,244,247,.42);--gray:rgba(242,244,247,.64);--light-gray:rgba(242,244,247,.42);
+--border-subtle:rgba(255,255,255,.08);--border-gold:rgba(255,255,255,.08);--border-active:#00E5FD;
+--spot-gold:rgba(0,229,253,.14);--spot-orange:rgba(0,229,253,.10);
+--sunset-orange:#00C9E0;--sunset-red:#00B9CC;
+--font-display:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+html,body{background:#0B0D10;color:#F2F4F7}
+h1,h2,h3,h4{color:var(--text-primary)}
+a{color:#00E5FD}
+.header,header.header{background:rgba(11,13,16,.9);border-bottom:1px solid rgba(255,255,255,.05);box-shadow:none}
+.logo-img{height:38px;width:auto;max-width:none}
+.nav-links a{color:rgba(242,244,247,.64)}
+.nav-links a:hover{color:#F2F4F7}
+.nav-phone,.header-phone{color:#00E5FD}
+.nav-cta,.cta-button,.btn-primary,button[type=submit],input[type=submit]{background:#00E5FD;color:#04202A;border-color:#00E5FD}
+.nav-cta:hover,.cta-button:hover,.btn-primary:hover{background:#7CF1FF;color:#04202A}
+.cta-box,.card,.service-card,.testimonial-card,.product-card{background:#12161B;border:1px solid rgba(255,255,255,.08);box-shadow:none}
+.article-header{background:#12161B}
+.article-content h1,.article-content h2,.article-content h3,.article-content h4{color:#F2F4F7}
+.article-content p,.article-content li{color:rgba(242,244,247,.64)}
+.footer,footer.footer,footer{background:#0B0D10;border-top:1px solid rgba(255,255,255,.05)}
+.footer p,footer p{color:rgba(242,244,247,.42)}
+.footer a,footer a{color:rgba(242,244,247,.42)}
+.footer a:hover,footer a:hover{color:#00E5FD}
+input,textarea,select{background:#12161B;color:#F2F4F7;border:1px solid rgba(255,255,255,.08)}
+input::placeholder,textarea::placeholder{color:rgba(242,244,247,.42)}
+hr{border-color:rgba(255,255,255,.08)}
+</style>
 </head>
 <body>
     <nav class="nav">
-        <a href="index.html" class="nav-logo">
-            <svg class="nav-logo-icon" viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="46" fill="#F5B84C"/>
-                <rect x="20" y="72" width="60" height="7" rx="2" fill="#1A1714"/>
-                <path d="M16 60V16C16 13 18 11 21 11H79C82 11 84 13 84 16V60C84 63 82 65 79 65H21C18 65 16 63 16 60Z" fill="#1A1714"/>
-                <rect x="21" y="16" width="58" height="44" rx="3" fill="#211D18"/>
-            </svg>
-            <span class="nav-logo-name">National Teleprompter</span>
-        </a>
+        <a href="index.html" class="nav-logo" aria-label="National Teleprompter home" style="display:inline-block;line-height:0;text-decoration:none"><img src="/logo-header.png" alt="National Teleprompter" style="height:36px;width:auto;display:block"></a>
     </nav>
 
     <div class="hero">
@@ -213,7 +244,7 @@
                 <div class="structure-card parent">
                     <h4>Claduta Corp</h4>
                     <p>South Dakota C Corporation</p>
-                    <p style="color: var(--gold); margin-top: 6px;">Parent Holding Company</p>
+                    <p style="color:var(--gold); margin-top:6px;">Parent Holding Company</p>
                 </div>
                 <div class="structure-card">
                     <h4>National Teleprompter</h4>
