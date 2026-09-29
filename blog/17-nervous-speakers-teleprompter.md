@@ -378,7 +378,7 @@ With a teleprompter, you control:
 
 Professional teleprompter support transforms nervous speakers into confident communicators. You're not alone in your anxiety—and you have the tools (and an operator) to succeed.
 
-**Florida Teleprompter helps nervous speakers deliver powerful, confident messages.**
+**National Teleprompter helps nervous speakers deliver powerful, confident messages.**
 
 ### Contact Us for Support
 
