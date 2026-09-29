@@ -284,38 +284,6 @@
         }
         .gal-item:hover img { transform: scale(1.05); opacity: 1; }
 
-        /* ---------- formatter ---------- */
-        .fmt { background:var(--surface); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
-        .fmt-panel {
-            background:var(--bg); border: 1px solid var(--line);
-            border-radius: 4px; padding: clamp(22px, 3.4vw, 32px);
-        }
-        .fmt-controls {
-            display: flex; flex-wrap: wrap; align-items: center;
-            gap: 22px; margin-bottom: 22px;
-        }
-        .fmt-ctl { display: flex; align-items: center; gap: 10px; font-size: .84rem; color: var(--text-dim); }
-        .fmt-ctl label { letter-spacing: .06em; text-transform: uppercase; font-size: .72rem; }
-        .fmt-ctl input[type="range"] { accent-color: var(--accent); width: 128px; }
-        .fmt-ctl input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px; }
-        .fmt-val { color: var(--accent); font-variant-numeric: tabular-nums; min-width: 2.4ch; }
-        .fmt-io { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
-        .fmt-io textarea {
-            width: 100%; min-height: 210px; resize: vertical;
-            background:var(--surface-2); border: 1px solid var(--line);
-            border-radius: 3px; padding: 16px;
-            color: var(--text); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            font-size: .88rem; line-height: 1.75;
-        }
-        .fmt-io textarea:focus { outline: none; border-color: var(--accent); }
-        .fmt-io textarea::placeholder { color: var(--text-mute); }
-        .fmt-actions {
-            margin-top: 20px; display: flex; flex-wrap: wrap;
-            align-items: center; gap: 14px;
-        }
-        .fmt-stats { margin-left: auto; font-size: .84rem; color: var(--text-mute); font-variant-numeric: tabular-nums; }
-        .fmt-stats b { color: var(--text-dim); font-weight: 600; }
-
         /* ---------- testimonials ---------- */
         .quote-grid {
             display: grid; gap: 22px;
@@ -429,7 +397,6 @@
         @media (max-width: 900px) {
             .cov-grid, .pq-grid, .contact-grid { grid-template-columns: 1fr; }
             .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
-            .fmt-io { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 760px) {
@@ -463,8 +430,6 @@
 
         @media (max-width: 460px) {
             .cities { grid-template-columns: 1fr; }
-            .fmt-controls { gap: 16px; }
-            .fmt-stats { margin-left: 0; width: 100%; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -483,7 +448,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#formatter">Script Tool</a></li>
+                <li><a href="#software">PrompterQ</a></li>
                 <li><a href="/recommended-gear.html">Gear</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="tel:727-623-2652" class="nav-phone">727-623-2652</a></li>
@@ -631,44 +596,6 @@
         </div>
     </section>
 
-    <!-- Script formatter -->
-    <section class="fmt" id="formatter">
-        <div class="wrap">
-            <div class="sec-head">
-                <span class="eyebrow">Free Tool</span>
-                <h2 class="sec-title">Script Formatter</h2>
-                <p class="sec-sub">Paste a script to break it into short, readable prompter lines and estimate how long it runs on air. Everything happens in your browser — nothing is uploaded.</p>
-            </div>
-            <div class="fmt-panel">
-                <div class="fmt-controls">
-                    <div class="fmt-ctl">
-                        <label for="fmtWidth">Line length</label>
-                        <input type="range" id="fmtWidth" min="20" max="70" value="38" step="1">
-                        <span class="fmt-val" id="fmtWidthVal">38</span>
-                    </div>
-                    <div class="fmt-ctl">
-                        <input type="checkbox" id="fmtCaps">
-                        <label for="fmtCaps">All caps</label>
-                    </div>
-                    <div class="fmt-ctl">
-                        <label for="fmtWpm">Pace</label>
-                        <input type="range" id="fmtWpm" min="100" max="200" value="140" step="5">
-                        <span class="fmt-val" id="fmtWpmVal">140</span>
-                        <span style="font-size:.72rem;letter-spacing:.06em">WPM</span>
-                    </div>
-                </div>
-                <div class="fmt-io">
-                    <textarea id="fmtIn" placeholder="Paste your script here…" aria-label="Script input"></textarea>
-                    <textarea id="fmtOut" readonly placeholder="Formatted script appears here…" aria-label="Formatted output"></textarea>
-                </div>
-                <div class="fmt-actions">
-                    <button type="button" class="btn btn-primary" id="fmtCopy">Copy Result</button>
-                    <button type="button" class="btn btn-secondary" id="fmtClear">Clear</button>
-                    <p class="fmt-stats"><b id="fmtWords">0</b> words · <b id="fmtLines">0</b> lines · approx. <b id="fmtTime">0:00</b> on air</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Testimonials -->
     <section class="testimonials">
@@ -739,7 +666,7 @@
                 <div class="pq-text">
                     <span class="eyebrow">Our Software</span>
                     <h2>Meet <em>PrompterQ</em></h2>
-                    <p>Professional teleprompter software built by operators, for operators. The same tool we use on shows for Disney, ESPN, and Fortune 500 clients — now available to you.</p>
+                    <p>Professional teleprompter software built by operators, for operators. The same tool we use on shows for Disney, ESPN, and Fortune 500 clients — now available to you. The free version runs in your browser, no install, works offline.</p>
                     <ul>
                         <li>36 cue markers for instant navigation</li>
                         <li>Multi-script run list for complex shows</li>
@@ -749,8 +676,8 @@
                         <li>60fps smooth scroll with live speed control</li>
                     </ul>
                     <div class="pq-ctas">
-                        <a href="#contact" class="btn btn-primary">Ask About PrompterQ</a>
-                        <a href="#contact" class="btn btn-secondary">$99 One-Time</a>
+                        <a href="https://prompterq.com/PrompterQ-v4.html" class="btn btn-primary" target="_blank" rel="noopener">Open PrompterQ Free</a>
+                        <a href="https://prompterq.com/#pricing" class="btn btn-secondary" target="_blank" rel="noopener">Pro &mdash; $349/yr</a>
                     </div>
                 </div>
                 <div class="pq-shot">
@@ -814,7 +741,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#formatter">Script Tool</a></li>
+                        <li><a href="#software">PrompterQ</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="recommended-gear.html">Recommended Gear</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -902,94 +829,6 @@
             if (e.key === 'Escape') closeLightbox();
         });
 
-        // Script formatter
-        (function () {
-            var inEl = document.getElementById('fmtIn');
-            var outEl = document.getElementById('fmtOut');
-            var widthEl = document.getElementById('fmtWidth');
-            var widthVal = document.getElementById('fmtWidthVal');
-            var capsEl = document.getElementById('fmtCaps');
-            var wpmEl = document.getElementById('fmtWpm');
-            var wpmVal = document.getElementById('fmtWpmVal');
-            var wordsEl = document.getElementById('fmtWords');
-            var linesEl = document.getElementById('fmtLines');
-            var timeEl = document.getElementById('fmtTime');
-            var copyEl = document.getElementById('fmtCopy');
-            var clearEl = document.getElementById('fmtClear');
-
-            function wrapParagraph(text, width) {
-                var words = text.split(/\s+/).filter(Boolean);
-                var lines = [];
-                var line = '';
-                words.forEach(function (w) {
-                    if (!line.length) {
-                        line = w;
-                    } else if ((line + ' ' + w).length <= width) {
-                        line += ' ' + w;
-                    } else {
-                        lines.push(line);
-                        line = w;
-                    }
-                });
-                if (line.length) lines.push(line);
-                return lines;
-            }
-
-            function format() {
-                var raw = inEl.value;
-                var width = parseInt(widthEl.value, 10);
-                var wpm = parseInt(wpmEl.value, 10);
-
-                var paragraphs = raw.split(/\n\s*\n/);
-                var out = [];
-                paragraphs.forEach(function (p) {
-                    var clean = p.replace(/\s+/g, ' ').trim();
-                    if (!clean) return;
-                    if (capsEl.checked) clean = clean.toUpperCase();
-                    out.push(wrapParagraph(clean, width).join('\n'));
-                });
-
-                var result = out.join('\n\n');
-                outEl.value = result;
-
-                var words = raw.split(/\s+/).filter(Boolean).length;
-                var lines = result ? result.split('\n').filter(function (l) { return l.trim(); }).length : 0;
-                var secs = words ? Math.round(words / wpm * 60) : 0;
-                var mm = Math.floor(secs / 60);
-                var ss = secs % 60;
-
-                wordsEl.textContent = words;
-                linesEl.textContent = lines;
-                timeEl.textContent = mm + ':' + (ss < 10 ? '0' : '') + ss;
-            }
-
-            widthEl.addEventListener('input', function () { widthVal.textContent = widthEl.value; format(); });
-            wpmEl.addEventListener('input', function () { wpmVal.textContent = wpmEl.value; format(); });
-            capsEl.addEventListener('change', format);
-            inEl.addEventListener('input', format);
-
-            copyEl.addEventListener('click', function () {
-                if (!outEl.value) return;
-                outEl.select();
-                var done = false;
-                try { done = document.execCommand('copy'); } catch (err) { done = false; }
-                if (navigator.clipboard && !done) {
-                    navigator.clipboard.writeText(outEl.value).catch(function () {});
-                }
-                window.getSelection().removeAllRanges();
-                var label = copyEl.textContent;
-                copyEl.textContent = 'Copied';
-                setTimeout(function () { copyEl.textContent = label; }, 1400);
-            });
-
-            clearEl.addEventListener('click', function () {
-                inEl.value = '';
-                format();
-                inEl.focus();
-            });
-
-            format();
-        })();
     </script>
 </body>
 </html>
