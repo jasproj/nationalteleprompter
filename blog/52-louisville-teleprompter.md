@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Louisville Teleprompter Services | Kentucky Corporate Hub"
 description: "Professional teleprompter services for Louisville's corporate events, conventions, and business communications. Louisville's active business community…"

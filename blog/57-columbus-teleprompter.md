@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Columbus Teleprompter Services | Midwest Corporate & Tech Hub"
 description: "Professional teleprompter services for Columbus's corporate events, tech sector, and business communications. Columbus's growing tech and corporate presence…"

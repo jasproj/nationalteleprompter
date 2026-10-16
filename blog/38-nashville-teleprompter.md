@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Nashville Teleprompter Services | Music City Entertainment & Corporate Hub"
 description: "Professional teleprompter services for Nashville's music industry, entertainment, and corporate events. Nashville's unique music scene and growing corporate…"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Detroit Teleprompter Services | Automotive & Manufacturing Hub"
 description: "Professional teleprompter services for Detroit's automotive, manufacturing, and corporate sectors"

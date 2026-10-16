@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Seattle Teleprompter Services | Pacific Northwest Corporate Hub"
 description: "Professional teleprompter services for Seattle's tech, corporate, and media sectors. Seattle's major tech companies and growing corporate community require…"

@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Wedding & Ceremony Teleprompter Services"
 description: "Weddings, funerals, ceremonies, vow renewals — special events often feature emotional speeches and readings requiring teleprompter support."

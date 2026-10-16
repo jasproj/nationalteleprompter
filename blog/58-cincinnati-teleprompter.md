@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Cincinnati Teleprompter Services | Ohio Corporate & Manufacturing Hub"
 description: "Professional teleprompter services for Cincinnati's corporate events, manufacturing sector, and business communications. Cincinnati's corporate and…"
