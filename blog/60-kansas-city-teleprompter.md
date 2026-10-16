@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Kansas City Teleprompter Services | Midwest Corporate & Finance Hub"
 description: "Professional teleprompter services for Kansas City's corporate events, financial services, and business communications. Kansas City's corporate and…"

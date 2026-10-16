@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Las Vegas Teleprompter Services | Entertainment Capital Events & Conventions"
 description: "Professional teleprompter services for Las Vegas's massive convention and entertainment industry. Las Vegas hosts thousands of events annually; professional…"

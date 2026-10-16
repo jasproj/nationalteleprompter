@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Minneapolis Teleprompter Services | Upper Midwest Corporate & Tech Hub"
 description: "Professional teleprompter services for Minneapolis's corporate events, tech sector, and business communications"

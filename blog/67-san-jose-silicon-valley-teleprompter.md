@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "San Jose & Silicon Valley Teleprompter Services | Tech Capital Hub"
 description: "Professional teleprompter services for San Jose and Silicon Valley's tech sector, startup ecosystem, and corporate communications"

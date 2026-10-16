@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Pittsburgh Teleprompter Services | Steel City Corporate & Tech Hub"
 description: "Professional teleprompter services for Pittsburgh's corporate events, tech sector, and business communications"
