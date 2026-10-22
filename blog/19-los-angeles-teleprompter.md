@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "Los Angeles Teleprompter Rental & Professional Services | Entertainment Capital"
 description: "Serving Los Angeles, Hollywood, Beverly Hills, and Southern California — professional teleprompter services for entertainment production, commercial shoots,…"
