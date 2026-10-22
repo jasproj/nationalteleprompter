@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: "New York Teleprompter Rental & Professional Services | NYC Expert"
 description: "Serving New York City, Manhattan, Brooklyn, Queens, and the greater NYC metro area, professional teleprompter services for broadcast television, corporate…"
